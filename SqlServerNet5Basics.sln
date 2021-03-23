@@ -15,11 +15,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "Windows
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopWatchLibrary", "StopWatchLibrary\StopWatchLibrary.csproj", "{0C59240A-4229-4029-A547-B78569BD418D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTableHelpers", "DataTableHelpers\DataTableHelpers.csproj", "{A4A427A7-AC15-48DC-98D8-58204E80C7CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTableHelpers", "DataTableHelpers\DataTableHelpers.csproj", "{A4A427A7-AC15-48DC-98D8-58204E80C7CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlOperations", "SqlOperations\SqlOperations.csproj", "{D9B60734-FB02-47D4-9F86-2AC5D80A8E33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlOperations", "SqlOperations\SqlOperations.csproj", "{D9B60734-FB02-47D4-9F86-2AC5D80A8E33}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigurationHelper", "ConfigurationHelper\ConfigurationHelper.csproj", "{0813DBBF-D816-4468-940C-336DC82AF847}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{118B2529-A5A2-4F61-A28D-E76ED8CD7954}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
