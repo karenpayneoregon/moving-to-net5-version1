@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<LangVersion>9.0</LangVersion>
+		<TargetFramework>net5.0-windows</TargetFramework>
+		<UseWindowsForms>true</UseWindowsForms>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+	  <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <ProjectReference Include="..\DataGridViewHelpers\DataGridViewHelpers.csproj" />
+	  <ProjectReference Include="..\DataTableHelpers\DataTableHelpers.csproj" />
+	  <ProjectReference Include="..\SqlOperations\SqlOperations.csproj" />
+	  <ProjectReference Include="..\StopWatchLibrary\StopWatchLibrary.csproj" />
+	  <ProjectReference Include="..\WinFormsHelpers\WinFormsHelpers.csproj" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <None Update="appsettings.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>
