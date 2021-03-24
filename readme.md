@@ -4,15 +4,15 @@ VS2019 solution for teaching working with SQL-Server databases. Rather than plac
 
 |Project|Purpose   |
 | :---         |  :---  |
-|ConfigurationHelper|Provides code to read appsettings.json for connection strings   |
+|ConfigurationHelper|Provides code to read `appsettings.json` for connection strings   |
 |DataGridViewHelpers|Language extensions for DataGridView control   |
 |DataTableHelpers|Language extensions for DataTable class   |
 |SqlOperations|Provides code to interact with SQL-Server using SqlClient data provider   |
 |SqlOperationsEntityFrameworkCore|Provides code to interact with SQL-Server using Entity Framework Core |
 |StopWatchLibrary| Contains class to record elapsed time using a StopWatch component |
 |WinFormHelpers| Classes for working with Window forms projects (non-visual) |
-|BasicRead| Utilizes `SqlOperations` to read data into a DataGridView |
-|BasicReadEntityFrameworkCore| Utilizes `SqlOperationsEntityFrameworkCore` to read data into a DataGridView |
+|BasicRead| Utilizes <kbd>SqlOperations</kbd>c to read data into a DataGridView |
+|BasicReadEntityFrameworkCore| Utilizes <kbd>SqlOperationsEntityFrameworkCore</kbd> to read data into a DataGridView |
 
 
 <br/>
