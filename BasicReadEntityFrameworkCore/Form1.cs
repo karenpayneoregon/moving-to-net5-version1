@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BasicReadEntityFrameworkCore.LanguageExtensions;
 using DataGridViewHelpers;
 using SqlOperationsEntityFrameworkCore;
 using SqlOperationsEntityFrameworkCore.Models;
@@ -16,6 +17,13 @@ using static WinFormDialogs.Dialogs;
 
 namespace BasicReadEntityFrameworkCore
 {
+    /// <summary>
+    /// Demonstrate
+    /// * Reading data
+    /// * Change notification in tangent with INotifyPropertyChanged in Product class
+    /// * Simple language extensions
+    /// * Monitoring changes to the BindingSource via ListChanged event
+    /// </summary>
     public partial class Form1 : Form
     {
         private readonly BindingSource _bindingSource = new();
@@ -40,23 +48,33 @@ namespace BasicReadEntityFrameworkCore
             
             dataGridView1.UserDeletingRow += DataGridView1OnUserDeletingRow;
         }
-
+        
+        /// <summary>
+        /// User request to remove current DataGridView row
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DataGridView1OnUserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             e.Cancel = PromptRowRemoval();
-
         }
-
+        /// <summary>
+        /// Delete current product with yes/no prompt
+        /// </summary>
+        /// <returns>bool which is feed to e.Cancel in OnUserDeletingRow event</returns>
+        /// <remarks>
+        /// This can be optimized, leaving this as is for teaching
+        /// </remarks>
         private bool PromptRowRemoval()
         {
-            if (_bindingSource.Current is not null)
+            if (_bindingSource.HasCurrent())
             {
-                var product = (Product) _bindingSource.Current;
-                if (Question($"Remove {product.ProductName}"))
+
+                if (Question($"Remove {_bindingSource.ProductName()}"))
                 {
-                    if (!DataOperations.Remove(product.ProductId))
+                    if (!DataOperations.Remove(_bindingSource.ProductIdentifier()))
                     {
-                        MessageBox.Show($"Failed to remove\n{product.ProductName}");
+                        MessageBox.Show($"Failed to remove\n{_bindingSource.ProductName()}");
                         return true;
                     }
                     else
@@ -64,16 +82,21 @@ namespace BasicReadEntityFrameworkCore
                         return false;
                     }
                 }
-                return !Question($"Remove {product.ProductName}");
+                
+                return true;
             }
 
             return true;
         }
-        
 
+        /// <summary>
+        /// Listen for changes to the underlying data 
+        /// </summary>
+        /// <param name="sender">BindingSource</param>
+        /// <param name="e"><see cref="ListChangedEventArgs"/></param>
         private void BindingSourceOnListChanged(object sender, ListChangedEventArgs e)
         {
-            
+
             switch (e.ListChangedType)
             {
                 case ListChangedType.Reset:
@@ -85,6 +108,7 @@ namespace BasicReadEntityFrameworkCore
                 case ListChangedType.ItemMoved:
                     break;
                 case ListChangedType.ItemChanged:
+                    Debug.WriteLine("");
                     break;
                 case ListChangedType.PropertyDescriptorAdded:
                     break;
@@ -96,7 +120,11 @@ namespace BasicReadEntityFrameworkCore
                     throw new ArgumentOutOfRangeException();
             }
         }
-
+        /// <summary>
+        /// Get current Product information
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CurrentButton_Click(object sender, EventArgs e)
         {
             if (_bindingSource.Current is null)
