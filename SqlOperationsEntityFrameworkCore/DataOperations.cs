@@ -64,6 +64,29 @@ namespace SqlOperationsEntityFrameworkCore
 
             return productList;
         }
+        /// <summary>
+        /// Return an ordered list of products first by category then by product ASC
+        /// </summary>
+        /// <returns>Task&lt;List&lt;Product&gt;&gt; ordered by category name then by product name</returns>
+        public static async Task<List<Product>> GetProductsWithProjectionOrderByCategory()
+        {
+            var productList = new List<Product>();
+
+            await Task.Run(async () =>
+            {
+                
+                var products = await GetProductsWithProjection();
+
+                productList = products
+                    .OrderBy(p => p.CategoryName)
+                    .ThenBy(p => p.ProductName).ToList();
+
+
+
+            });
+
+            return productList;
+        }
 
         /// <summary>
         /// Get all categories suitable for displaying in a ComboBox or
@@ -87,6 +110,15 @@ namespace SqlOperationsEntityFrameworkCore
 
             return categoryList;
 
+        }
+        /// <summary>
+        /// Remove product from database table by id
+        /// </summary>
+        /// <param name="productIdentifier">Product identifier</param>
+        /// <returns></returns>
+        public static bool Remove(int productIdentifier)
+        {
+            return false;
         }
     }
 }

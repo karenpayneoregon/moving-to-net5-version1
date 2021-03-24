@@ -8,7 +8,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\DataGridViewHelpers\DataGridViewHelpers.csproj" />
 	  <ProjectReference Include="..\SqlOperationsEntityFrameworkCore\SqlOperationsEntityFrameworkCore.csproj" />
+	  <ProjectReference Include="..\WinFormDialogs\WinFormDialogs.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using SqlOperationsEntityFrameworkCore.Models;
@@ -13,13 +15,25 @@ namespace SqlOperationsEntityFrameworkCore.Models
     /// than bring in all properties e.g. without using projections
     /// Categories and Supplier properties would be loaded.
     /// </summary>
-    public class Product
+    public class Product : INotifyPropertyChanged
     {
+        private string _productName;
+        private short? _unitsInStock;
+
         /// <summary>
         /// Primary key
         /// </summary>
         public int ProductId { get; set; }
-        public string ProductName { get; set; }
+        public string ProductName
+        {
+            get => _productName;
+            set
+            {
+                _productName = value;
+                OnPropertyChanged();
+            }
+        }
+
         /// <summary>
         /// Primary key to supplier
         /// </summary>
@@ -27,7 +41,17 @@ namespace SqlOperationsEntityFrameworkCore.Models
         public string SupplierName { get; set; }
         public string QuantityPerUnit { get; set; }
         public decimal? UnitPrice { get; set; }
-        public short? UnitsInStock { get; set; }
+
+        public short? UnitsInStock
+        {
+            get => _unitsInStock;
+            set
+            {
+                _unitsInStock = value;
+                OnPropertyChanged();
+            }
+        }
+
         public short? UnitsOnOrder { get; set; }
         public short? ReorderLevel { get; set; }
         /// <summary>
@@ -37,6 +61,12 @@ namespace SqlOperationsEntityFrameworkCore.Models
         public string CategoryName { get; set; }
 
         public override string ToString() => ProductName;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         public static Expression<Func<Products, Product>> Projection =>
             product => new Product()
