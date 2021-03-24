@@ -43,7 +43,7 @@ private readonly BindingSource _productBindingSource = new BindingSource();
 _productView = new SortableBindingList<Products>(await Operations.GetProducts(categoryIdentifier));
 ```
 
-Assign the BindingList to the BindingSource
+:white_medium_square: Assign the BindingList to the BindingSource
 
 ```csharp
 _productBindingSource.DataSource = _productView;
