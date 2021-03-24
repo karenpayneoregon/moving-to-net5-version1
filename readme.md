@@ -4,7 +4,11 @@ VS2019 solution for teaching working with SQL-Server databases. Rather than plac
 
 :stop_sign: **Important**
 
-Before working with this code, create and populate the database via [this script](https://gist.github.com/karenpayneoregon/40a6e1158ff29819286a39b7f1ed1ae8) using SSMS (SQL-Server Managment Studio)
+- Before working with this code, create and populate the database via [this script](https://gist.github.com/karenpayneoregon/40a6e1158ff29819286a39b7f1ed1ae8) using SSMS (SQL-Server Managment Studio)
+- Ensure .NET5 is installed, if not install from [here](https://dotnet.microsoft.com/download).
+- From Solution Explorer, right click the top node, right click, select rebuild
+  - If the build fails, open the Visual Studio `Output window` from Visual Studio menu <kbd>View</kbd>, <kbd>Output window</kbd> see what the error is. Most of the time it will be apprarent e.g. missing an NuGet package (if some run NuGet Restore packages by right clicking on the top node of solution explorer `Restore NuGet packages` followed by building the solution again.)
+- Run BasicReadEntityFrameworkCore project.
 
 |Project|Purpose   |
 | :---         |  :---  |
