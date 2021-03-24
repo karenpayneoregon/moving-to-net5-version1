@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,16 +16,16 @@ namespace BasicReadEntityFrameworkCore.LanguageExtensions
         /// </summary>
         /// <param name="sender"></param>
         /// <returns></returns>
-        public static Product CurrentProduct(this  BindingSource sender) => (Product) sender.Current;
+        public static Product CurrentProduct([NotNull] this BindingSource sender) => (Product) sender.Current;
 
         /// <summary>
         /// Assert there is a current product
         /// </summary>
         /// <param name="sender"></param>
         /// <returns></returns>
-        public static bool HasCurrent(this BindingSource sender) => sender.Current is not null;
+        public static bool HasCurrent([NotNull] this BindingSource sender) => sender.Current is not null;
 
-        public static string ProductName(this BindingSource sender) => sender.CurrentProduct().ProductName;
-        public static int ProductIdentifier(this BindingSource sender) => sender.CurrentProduct().ProductId;
+        public static string ProductName([NotNull] this BindingSource sender) => sender.CurrentProduct().ProductName;
+        public static int ProductIdentifier([NotNull] this BindingSource sender) => sender.CurrentProduct().ProductId;
     }
 }

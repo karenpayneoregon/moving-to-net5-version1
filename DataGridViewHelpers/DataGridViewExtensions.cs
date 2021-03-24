@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Windows.Forms;
 
 namespace DataGridViewHelpers
@@ -10,7 +11,7 @@ namespace DataGridViewHelpers
         /// Entity Framework
         /// </summary>
         /// <param name="sender"></param>
-        public static void ExpandColumns(this DataGridView sender)
+        public static void ExpandColumns([NotNull] this DataGridView sender)
         {
             foreach (DataGridViewColumn col in sender.Columns)
             {

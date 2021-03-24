@@ -37,7 +37,9 @@ namespace SqlOperations.Classes
                     await cn.OpenAsync(ct);
                     AfterConnectMonitor?.Invoke($"Elapsed: {StopWatcher.Instance.Elapsed}");
                 }
+#pragma warning disable 168
                 catch (TaskCanceledException tce)
+#pragma warning restore 168
                 {
                     /*
                      * For debug purposes we have a variable for TaskCanceledException

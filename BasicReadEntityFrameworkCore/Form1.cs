@@ -5,14 +5,19 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using BasicReadEntityFrameworkCore.LanguageExtensions;
 using DataGridViewHelpers;
+
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using SqlOperationsEntityFrameworkCore;
 using SqlOperationsEntityFrameworkCore.Models;
+
 using static WinFormDialogs.Dialogs;
 
 namespace BasicReadEntityFrameworkCore
@@ -24,6 +29,9 @@ namespace BasicReadEntityFrameworkCore
     /// * Simple language extensions
     /// * Monitoring changes to the BindingSource via ListChanged event
     /// </summary>
+    /// <remarks>
+    /// As coded the DataGridView will not sort but by implementing <see cref="SortableBindingList{T}"/>
+    /// </remarks>
     public partial class Form1 : Form
     {
         private readonly BindingSource _bindingSource = new();
@@ -43,6 +51,7 @@ namespace BasicReadEntityFrameworkCore
             dataGridView1.ExpandColumns();
 
             ProductNameTextBox.DataBindings.Add("Text", _bindingSource, "ProductName");
+            ProductIdentifierTextBox.DataBindings.Add("Text", _bindingSource, "ProductId");
             
             _bindingSource.ListChanged += BindingSourceOnListChanged;
             
@@ -137,6 +146,14 @@ namespace BasicReadEntityFrameworkCore
             var productName = current.ProductName;
 
             MessageBox.Show($"{productId}\n{productName}");
+        }
+
+        private void ExportProductsJsonButton_Click(object sender, EventArgs e)
+        {
+            var fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Products.json");
+            var productList = (List<Product>) _bindingSource.DataSource;
+            DataOperations.ProductsAsJson(productList,fileName);
+            
         }
     }
 }

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using SqlOperationsEntityFrameworkCore.Configurations;
 using SqlOperationsEntityFrameworkCore.Models;
 
@@ -110,6 +112,17 @@ namespace SqlOperationsEntityFrameworkCore
 
             return categoryList;
 
+        }
+        /// <summary>
+        /// Simple example for converting Product list to json
+        /// </summary>
+        /// <param name="productsList"></param>
+        /// <param name="fileName"></param>
+        public static void ProductsAsJson(List<Product> productsList, string fileName)
+        {
+            string json = JsonConvert.SerializeObject(productsList, Formatting.Indented);
+            File.WriteAllText(fileName,json);
+            Console.WriteLine();
         }
         /// <summary>
         /// Remove product from database table by id

@@ -33,7 +33,6 @@ namespace BasicReadEntityFrameworkCore
             this.CurrentButton = new System.Windows.Forms.Button();
             this.ProductNameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ProductNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CategoryNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,12 +40,18 @@ namespace BasicReadEntityFrameworkCore
             this.UnitPriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitsInStockColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitsOnOrderColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExportProductsJsonButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ProductIdentifierTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // CurrentButton
             // 
-            this.CurrentButton.Location = new System.Drawing.Point(12, 369);
+            this.CurrentButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CurrentButton.Image = ((System.Drawing.Image)(resources.GetObject("CurrentButton.Image")));
+            this.CurrentButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CurrentButton.Location = new System.Drawing.Point(14, 355);
             this.CurrentButton.Name = "CurrentButton";
             this.CurrentButton.Size = new System.Drawing.Size(120, 23);
             this.CurrentButton.TabIndex = 10;
@@ -56,28 +61,20 @@ namespace BasicReadEntityFrameworkCore
             // 
             // ProductNameTextBox
             // 
-            this.ProductNameTextBox.Location = new System.Drawing.Point(12, 315);
+            this.ProductNameTextBox.Location = new System.Drawing.Point(14, 306);
             this.ProductNameTextBox.Name = "ProductNameTextBox";
+            this.ProductNameTextBox.PlaceholderText = "Product name";
             this.ProductNameTextBox.Size = new System.Drawing.Size(283, 23);
             this.ProductNameTextBox.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 297);
+            this.label1.Location = new System.Drawing.Point(14, 287);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 15);
             this.label1.TabIndex = 8;
             this.label1.Text = "Product name";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(12, 227);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(213, 49);
-            this.listBox1.TabIndex = 7;
             // 
             // dataGridView1
             // 
@@ -131,15 +128,48 @@ namespace BasicReadEntityFrameworkCore
             this.UnitsOnOrderColumn.HeaderText = "On Order";
             this.UnitsOnOrderColumn.Name = "UnitsOnOrderColumn";
             // 
+            // ExportProductsJsonButton
+            // 
+            this.ExportProductsJsonButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExportProductsJsonButton.Image = ((System.Drawing.Image)(resources.GetObject("ExportProductsJsonButton.Image")));
+            this.ExportProductsJsonButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ExportProductsJsonButton.Location = new System.Drawing.Point(668, 355);
+            this.ExportProductsJsonButton.Name = "ExportProductsJsonButton";
+            this.ExportProductsJsonButton.Size = new System.Drawing.Size(120, 23);
+            this.ExportProductsJsonButton.TabIndex = 11;
+            this.ExportProductsJsonButton.Text = "button1";
+            this.ExportProductsJsonButton.UseVisualStyleBackColor = true;
+            this.ExportProductsJsonButton.Click += new System.EventHandler(this.ExportProductsJsonButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 232);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 15);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Product Id";
+            // 
+            // ProductIdentifierTextBox
+            // 
+            this.ProductIdentifierTextBox.BackColor = System.Drawing.Color.LightYellow;
+            this.ProductIdentifierTextBox.Location = new System.Drawing.Point(14, 255);
+            this.ProductIdentifierTextBox.Name = "ProductIdentifierTextBox";
+            this.ProductIdentifierTextBox.ReadOnly = true;
+            this.ProductIdentifierTextBox.Size = new System.Drawing.Size(100, 23);
+            this.ProductIdentifierTextBox.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 404);
+            this.ClientSize = new System.Drawing.Size(800, 390);
+            this.Controls.Add(this.ProductIdentifierTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ExportProductsJsonButton);
             this.Controls.Add(this.CurrentButton);
             this.Controls.Add(this.ProductNameTextBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -157,7 +187,6 @@ namespace BasicReadEntityFrameworkCore
         private System.Windows.Forms.Button CurrentButton;
         private System.Windows.Forms.TextBox ProductNameTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductNameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryNameColumn;
@@ -165,6 +194,9 @@ namespace BasicReadEntityFrameworkCore
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitPriceColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitsInStockColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitsOnOrderColumn;
+        private System.Windows.Forms.Button ExportProductsJsonButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox ProductIdentifierTextBox;
     }
 }
 
