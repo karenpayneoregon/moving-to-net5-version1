@@ -2,7 +2,7 @@
 
 VS2019 solution for teaching working with SQL-Server databases. Rather than place all code in the front-end project or split code between front-end/back-end, code has been broken out to smaller class projects which allows code to be used in other projects.
 
-:stop_sign: Important
+:stop_sign: **Important**
 
 Before working with this code, create and populate the database via [this script](https://gist.github.com/karenpayneoregon/40a6e1158ff29819286a39b7f1ed1ae8) using SSMS (SQL-Server Managment Studio)
 
