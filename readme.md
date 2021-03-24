@@ -11,7 +11,7 @@ VS2019 solution for teaching working with SQL-Server databases. Rather than plac
 |SqlOperationsEntityFrameworkCore|Provides code to interact with SQL-Server using Entity Framework Core |
 |StopWatchLibrary| Contains class to record elapsed time using a StopWatch component |
 |WinFormHelpers| Classes for working with Window forms projects (non-visual) |
-|BasicRead| Utilizes <kbd>SqlOperations</kbd>c to read data into a DataGridView |
+|BasicRead| Utilizes <kbd>SqlOperations</kbd> to read data into a DataGridView |
 |BasicReadEntityFrameworkCore| Utilizes <kbd>SqlOperationsEntityFrameworkCore</kbd> to read data into a DataGridView |
 
 
