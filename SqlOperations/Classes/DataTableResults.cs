@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 
-namespace WinFormsHelpers
+namespace SqlOperations.Classes
 {
     public class DataTableResults
     {

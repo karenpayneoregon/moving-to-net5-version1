@@ -6,7 +6,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using ConfigurationHelper;
 using DataTableHelpers;
-using WinFormsHelpers;
 using StopWatchLibrary;
 
 namespace SqlOperations.Classes
