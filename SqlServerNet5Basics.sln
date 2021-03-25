@@ -32,6 +32,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicReadEntityFrameworkCor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormDialogs", "WinFormDialogs\WinFormDialogs.csproj", "{AD0AB98A-4347-45BF-B4AE-FF14ADB79233}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityCoreExtensions", "EntityCoreExtensions\EntityCoreExtensions.csproj", "{1AE807B3-E216-4A6D-B2EA-E1B7B67F3A5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -82,6 +84,10 @@ Global
 		{AD0AB98A-4347-45BF-B4AE-FF14ADB79233}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD0AB98A-4347-45BF-B4AE-FF14ADB79233}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD0AB98A-4347-45BF-B4AE-FF14ADB79233}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AE807B3-E216-4A6D-B2EA-E1B7B67F3A5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AE807B3-E216-4A6D-B2EA-E1B7B67F3A5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AE807B3-E216-4A6D-B2EA-E1B7B67F3A5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AE807B3-E216-4A6D-B2EA-E1B7B67F3A5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,6 +101,7 @@ Global
 		{0813DBBF-D816-4468-940C-336DC82AF847} = {8F066792-64A0-4C25-90BD-F15F997F6099}
 		{7145B724-EA4A-4D20-8E4B-9A2F195044CA} = {8F066792-64A0-4C25-90BD-F15F997F6099}
 		{AD0AB98A-4347-45BF-B4AE-FF14ADB79233} = {8F066792-64A0-4C25-90BD-F15F997F6099}
+		{1AE807B3-E216-4A6D-B2EA-E1B7B67F3A5F} = {8F066792-64A0-4C25-90BD-F15F997F6099}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A3226FA-7F53-4324-935F-9B20F98BF15C}

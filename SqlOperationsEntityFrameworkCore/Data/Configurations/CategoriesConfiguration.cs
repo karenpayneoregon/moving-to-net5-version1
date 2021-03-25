@@ -24,6 +24,8 @@ namespace SqlOperationsEntityFrameworkCore.Data.Configurations
             entity.Property(e => e.Description).HasColumnType("ntext");
 
             entity.Property(e => e.Picture).HasColumnType("image");
+
+            entity.Property(e => e.CategoryName).HasComment("Category");
         }
     }
 }

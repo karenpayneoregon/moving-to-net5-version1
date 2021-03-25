@@ -147,13 +147,34 @@ namespace BasicReadEntityFrameworkCore
 
             MessageBox.Show($"{productId}\n{productName}");
         }
-
+        /// <summary>
+        /// Demonstrate serializing current products to a file.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ExportProductsJsonButton_Click(object sender, EventArgs e)
         {
             var fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Products.json");
-            var productList = (List<Product>) _bindingSource.DataSource;
-            DataOperations.ProductsAsJson(productList,fileName);
+
+            /*
+             * only for demoing to show it's working in case monitoring in Windows Explorer and Windows
+             * Explorer does not refresh right away.
+             */
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
             
+            /*
+             * Get the products via an extension method
+             */
+            var productList = _bindingSource.Products();
+            
+            /*
+             * Serialize product list to disk in the application folder
+             */
+            DataOperations.ProductsAsJson(productList,fileName);
+           
         }
     }
 }

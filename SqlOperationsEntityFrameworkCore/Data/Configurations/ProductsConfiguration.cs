@@ -36,6 +36,8 @@ namespace SqlOperationsEntityFrameworkCore.Data.Configurations
                 .WithMany(p => p.Products)
                 .HasForeignKey(d => d.SupplierId)
                 .HasConstraintName("FK_Products_Suppliers");
+
+            entity.Property(e => e.ProductName).HasComment("Product name");
         }
     }
 }

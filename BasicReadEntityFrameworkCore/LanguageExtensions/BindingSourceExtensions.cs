@@ -12,6 +12,12 @@ namespace BasicReadEntityFrameworkCore.LanguageExtensions
     public static class BindingSourceExtensions
     {
         /// <summary>
+        /// Cast DataSource to a list of <see cref="Product"/>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <returns></returns>
+        public static List<Product> Products(this BindingSource sender) => (List<Product>) sender.DataSource;
+        /// <summary>
         /// Get current product
         /// </summary>
         /// <param name="sender"></param>

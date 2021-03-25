@@ -12,6 +12,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\ConfigurationHelper\ConfigurationHelper.csproj" />
+	  <ProjectReference Include="..\EntityCoreExtensions\EntityCoreExtensions.csproj" />
 	</ItemGroup>
 
 </Project>
