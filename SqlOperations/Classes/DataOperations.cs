@@ -137,9 +137,8 @@ namespace SqlOperations.Classes
         /// This SQL was generated in Microsoft SQL-Server Management Studio (it's free)
         /// </summary>
         /// <returns></returns>
-        private static string SelectStatement()
-        {
-            return @"
+        private static string SelectStatement() =>
+            @"
 SELECT 
     P.ProductID, 
     P.ProductName, 
@@ -158,8 +157,6 @@ FROM
     Products AS P 
         INNER JOIN Categories AS C ON P.CategoryID = C.CategoryID 
         INNER JOIN Suppliers AS S ON P.SupplierID = S.SupplierID";
-            
-        }
 
         /// <summary>
         /// Used to set column header text in a DataGridView.
