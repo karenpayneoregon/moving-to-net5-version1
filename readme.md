@@ -13,14 +13,17 @@ VS2019 solution for teaching working with SQL-Server databases. Rather than plac
 |Project|Purpose   |
 | :---         |  :---  |
 |ConfigurationHelper|Provides code to read `appsettings.json` for connection strings   |
+|BasicRead :yellow_circle:| Utilizes <kbd>SqlOperations</kbd> to read data into a DataGridView |
+|BasicReadEntityFrameworkCore :purple_circle:| Utilizes <kbd>SqlOperationsEntityFrameworkCore</kbd> to read data into a DataGridView |
+|SqlOperations :yellow_circle:|Provides code to interact with SQL-Server using SqlClient data provider   |
+|SqlOperationsEntityFrameworkCore :purple_circle:|Provides code to interact with SQL-Server using Entity Framework Core |
+|EntityCoreExtensions :purple_circle:| Various language extensions for a [DbContext](https://docs.microsoft.com/en-us/dotnet/api/system.data.entity.dbcontext?view=entity-framework-6.2.0) |
 |DataGridViewHelpers|Language extensions for DataGridView control   |
 |DataTableHelpers|Language extensions for DataTable class   |
-|SqlOperations|Provides code to interact with SQL-Server using SqlClient data provider   |
-|SqlOperationsEntityFrameworkCore|Provides code to interact with SQL-Server using Entity Framework Core |
 |StopWatchLibrary| Contains class to record elapsed time using a StopWatch component |
 |WinFormHelpers| Classes for working with Window forms projects (non-visual) |
-|BasicRead| Utilizes <kbd>SqlOperations</kbd> to read data into a DataGridView |
-|BasicReadEntityFrameworkCore| Utilizes <kbd>SqlOperationsEntityFrameworkCore</kbd> to read data into a DataGridView |
+
+
 
 
 <br/>
