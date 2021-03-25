@@ -30,7 +30,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlOperationsEntityFramewor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicReadEntityFrameworkCore", "BasicReadEntityFrameworkCore\BasicReadEntityFrameworkCore.csproj", "{7E92938D-0CF4-45E0-8A2E-492132AB4C6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormDialogs", "WinFormDialogs\WinFormDialogs.csproj", "{AD0AB98A-4347-45BF-B4AE-FF14ADB79233}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormDialogs", "WinFormDialogs\WinFormDialogs.csproj", "{AD0AB98A-4347-45BF-B4AE-FF14ADB79233}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
