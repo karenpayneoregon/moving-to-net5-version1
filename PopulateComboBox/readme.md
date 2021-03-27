@@ -6,6 +6,8 @@ Shows how to populate a `ComboBox` from SQL-Server, show several columns concate
 
 :heavy_check_mark: Classes are in the Classes folder
 
+<kbd>👉</kbd><br> Used to respond to a [forum question](https://docs.microsoft.com/en-us/answers/questions/333768/binding-combobox-with-distinct-and-concatenated-va.html).
+
 
 ### Screenshots
 
