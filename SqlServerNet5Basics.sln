@@ -32,7 +32,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicReadEntityFrameworkCor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormDialogs", "WinFormDialogs\WinFormDialogs.csproj", "{AD0AB98A-4347-45BF-B4AE-FF14ADB79233}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityCoreExtensions", "EntityCoreExtensions\EntityCoreExtensions.csproj", "{1AE807B3-E216-4A6D-B2EA-E1B7B67F3A5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityCoreExtensions", "EntityCoreExtensions\EntityCoreExtensions.csproj", "{1AE807B3-E216-4A6D-B2EA-E1B7B67F3A5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PopulateComboBox", "PopulateComboBox\PopulateComboBox.csproj", "{AFFFA6D6-78CC-4074-9DE5-B5DAF2CD7F0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,6 +90,10 @@ Global
 		{1AE807B3-E216-4A6D-B2EA-E1B7B67F3A5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AE807B3-E216-4A6D-B2EA-E1B7B67F3A5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AE807B3-E216-4A6D-B2EA-E1B7B67F3A5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFFFA6D6-78CC-4074-9DE5-B5DAF2CD7F0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFFFA6D6-78CC-4074-9DE5-B5DAF2CD7F0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFFFA6D6-78CC-4074-9DE5-B5DAF2CD7F0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFFFA6D6-78CC-4074-9DE5-B5DAF2CD7F0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
