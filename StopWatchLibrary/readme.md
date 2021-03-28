@@ -4,7 +4,7 @@ Provides a single point for accurately measure elapsed time for task.
 
 ![version](../assets/Versions.png)
 
-The following line in StopWatcher class provides thread safe usage.
+The following line in [StopWatcher](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?view=net-5.0) class provides thread safe usage.
 ```csharp
 private static readonly Lazy<StopWatcher> Lazy = new(() => new StopWatcher());
 ```

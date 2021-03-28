@@ -1,6 +1,6 @@
 ﻿# About
 
-Contains several extension methods for DbContext.
+Contains several extension methods for [DbContext](https://docs.microsoft.com/en-us/ef/core/dbcontext-configuration/).
 
 ![ver](../assets/Versions.png) ![ef](../assets/efcore.png) 
 

@@ -1,6 +1,6 @@
 ﻿# About
 
-Class project for all SQL-Server data operations
+Class project for all [SQL-Server](https://docs.microsoft.com/en-us/sql/?view=sql-server-ver15) data operations
 
 
 ![versions](../assets/Versions.png)

@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsHelpers", "WinForms
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataGridViewHelpers", "DataGridViewHelpers\DataGridViewHelpers.csproj", "{CDB08424-570D-46C4-9529-6B9036932D86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{4A078719-88ED-4D54-8C5F-1E805BF242D6}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopWatchLibrary", "StopWatchLibrary\StopWatchLibrary.csproj", "{0C59240A-4229-4029-A547-B78569BD418D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTableHelpers", "DataTableHelpers\DataTableHelpers.csproj", "{A4A427A7-AC15-48DC-98D8-58204E80C7CB}"
@@ -34,8 +32,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormDialogs", "WinFormDi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityCoreExtensions", "EntityCoreExtensions\EntityCoreExtensions.csproj", "{1AE807B3-E216-4A6D-B2EA-E1B7B67F3A5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PopulateComboBox", "PopulateComboBox\PopulateComboBox.csproj", "{AFFFA6D6-78CC-4074-9DE5-B5DAF2CD7F0C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,10 +50,6 @@ Global
 		{CDB08424-570D-46C4-9529-6B9036932D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDB08424-570D-46C4-9529-6B9036932D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDB08424-570D-46C4-9529-6B9036932D86}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4A078719-88ED-4D54-8C5F-1E805BF242D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A078719-88ED-4D54-8C5F-1E805BF242D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A078719-88ED-4D54-8C5F-1E805BF242D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A078719-88ED-4D54-8C5F-1E805BF242D6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0C59240A-4229-4029-A547-B78569BD418D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0C59240A-4229-4029-A547-B78569BD418D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C59240A-4229-4029-A547-B78569BD418D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -90,10 +82,6 @@ Global
 		{1AE807B3-E216-4A6D-B2EA-E1B7B67F3A5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AE807B3-E216-4A6D-B2EA-E1B7B67F3A5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AE807B3-E216-4A6D-B2EA-E1B7B67F3A5F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AFFFA6D6-78CC-4074-9DE5-B5DAF2CD7F0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AFFFA6D6-78CC-4074-9DE5-B5DAF2CD7F0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AFFFA6D6-78CC-4074-9DE5-B5DAF2CD7F0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AFFFA6D6-78CC-4074-9DE5-B5DAF2CD7F0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

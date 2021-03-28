@@ -1,8 +1,8 @@
 ﻿# About
 
-Contains help methods to configure a DbContext connection, environment and logging read from appsettings.json in a project.
+Contains help methods to configure a [DbContext](https://docs.microsoft.com/en-us/ef/core/dbcontext-configuration/) connection, environment and logging read from appsettings.json in a project.
 
-Although C# 9 is used (configured in each project file) the majority of code will work with lower versions of C# while the recommendation is to use C# 9.
+Although [C# 9](https://devblogs.microsoft.com/dotnet/welcome-to-c-9-0/) is used (configured in each project file) the majority of code will work with lower versions of C# while the recommendation is to use C# 9.
 
 ![versions](../assets/Versions.png)
 
@@ -29,9 +29,9 @@ Although C# 9 is used (configured in each project file) the majority of code wil
 <br/>
 
 # Requires
-- Microsoft Visual Studio 2019
-- Microsoft SQL-Server (minimum Express edition)
-- Microsoft SSMS (SQL-Server Management Studio) which is optional for creating the database which can be done in Visual Studio also.
+- Microsoft [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
+- Microsoft [SQL-Server](https://docs.microsoft.com/en-us/sql/?view=sql-server-ver15) (minimum [Express edition](https://www.microsoft.com/en-us/sql-server/sql-server-downloads))
+- Microsoft [SSMS](https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms?view=sql-server-ver15) (SQL-Server Management Studio) which is optional for creating the database which can be done in Visual Studio also.
 
 # NuGet packages 
 
