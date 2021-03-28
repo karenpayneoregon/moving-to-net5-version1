@@ -25,8 +25,8 @@
 |WinFormHelpers| Classes for working with Window forms projects (non-visual) |
 |WinFormDialogs| Wrapper class for common dialog(s) |
 |CommonLanguageExensions| String extension methods |
-|EntityFrameworkCoreProductTest| Unit tests for validating EF Core operations on product model from [SqlOperationsEntityFrameworkCore](https://github.com/karenpayneoregon/moving-to-net5-version1/tree/master/SqlOperationsEntityFrameworkCore) |
-|LanguageExtensionTest| Validates extension methods in [CommonLanguageExtensions](https://github.com/karenpayneoregon/moving-to-net5-version1/tree/master/CommonLanguageExensions) project |
+|EntityFrameworkCoreProductTest :white_circle:| Unit tests for validating EF Core operations on product model from [SqlOperationsEntityFrameworkCore](https://github.com/karenpayneoregon/moving-to-net5-version1/tree/master/SqlOperationsEntityFrameworkCore) |
+|LanguageExtensionTest :white_circle: | Validates extension methods in [CommonLanguageExtensions](https://github.com/karenpayneoregon/moving-to-net5-version1/tree/master/CommonLanguageExensions) project |
 
 
 
@@ -35,6 +35,8 @@
 :purple_circle: Entity Framework Core
 
 :yellow_circle: SQL client data provider
+
+:white_circle: Unit test
 
 ![vers](assets/Versions.png) 
 ![ef](assets/efcore.png)
