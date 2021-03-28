@@ -48,6 +48,7 @@
 # Miscellaneous
 
 - Solution folders are used for partitioning functionality, classes, frontend and test project for instance for organization purposes. Solution folders do not physically exist on disk.
+- Delegates/evemts are used, if never used before see [Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/) documentation.
 
 
 
