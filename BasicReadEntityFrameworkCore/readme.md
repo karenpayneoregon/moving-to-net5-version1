@@ -1,6 +1,6 @@
 ﻿# About
 
-Sample to open tables in [SQL-Server](https://docs.microsoft.com/en-us/sql/?view=sql-server-ver15) using [SqlConnection](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlconnection?view=dotnet-plat-ext-5.0) data provider 
+Sample to open tables in [SQL-Server](https://docs.microsoft.com/en-us/sql/?view=sql-server-ver15) using a data provider 
 with [asynchronous](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/) operations and given timeout for a connection, see the [following article](https://social.technet.microsoft.com/wiki/contents/articles/54260.sql-server-freezes-when-connecting-c.aspx) for more details.
 
 :heavy_check_mark: This is a no-frills user interface.
