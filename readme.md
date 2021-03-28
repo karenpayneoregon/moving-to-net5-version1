@@ -24,6 +24,7 @@
 |StopWatchLibrary| Contains class to record elapsed time using a StopWatch component |
 |WinFormHelpers| Classes for working with Window forms projects (non-visual) |
 |WinFormDialogs| Wrapper class for common dialog(s) |
+|CommonLanguageExensions| String extension methods |
 
 
 
