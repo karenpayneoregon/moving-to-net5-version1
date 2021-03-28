@@ -25,7 +25,8 @@
 |WinFormHelpers| Classes for working with Window forms projects (non-visual) |
 |WinFormDialogs| Wrapper class for common dialog(s) |
 |CommonLanguageExensions| String extension methods |
-
+|EntityFrameworkCoreProductTest| Unit tests for validating EF Core operations on product model from [SqlOperationsEntityFrameworkCore](https://github.com/karenpayneoregon/moving-to-net5-version1/tree/master/SqlOperationsEntityFrameworkCore) |
+|LanguageExtensionTest| Validates extension methods in [CommonLanguageExtensions](https://github.com/karenpayneoregon/moving-to-net5-version1/tree/master/CommonLanguageExensions) project |
 
 
 
