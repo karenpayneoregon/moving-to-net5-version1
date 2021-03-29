@@ -27,7 +27,8 @@
 |CommonLanguageExensions| String extension methods |
 |EntityFrameworkCoreProductTest :white_circle:| Unit tests for validating EF Core operations on product model from [SqlOperationsEntityFrameworkCore](https://github.com/karenpayneoregon/moving-to-net5-version1/tree/master/SqlOperationsEntityFrameworkCore) |
 |LanguageExtensionTest :white_circle: | Validates extension methods in [CommonLanguageExtensions](https://github.com/karenpayneoregon/moving-to-net5-version1/tree/master/CommonLanguageExensions) project |
-
+|ValidationLibrary  | Data annotation validation library |
+|ValidationWithAnnotationTest :white_circle: | Validates ValidationLibrary |
 
 
 <br/>

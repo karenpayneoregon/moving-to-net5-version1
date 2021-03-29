@@ -41,6 +41,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguageExtensionTest", "La
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCoreProductTest", "EntityFrameworkCoreProductTest\EntityFrameworkCoreProductTest.csproj", "{E3B39343-EA65-4E47-B612-7AF093222742}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidationLibrary", "ValidationLibrary\ValidationLibrary.csproj", "{7BE317AF-999C-472E-ACA9-8F8DA058E387}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationWithAnnotationTest", "ValidationWithAnnotationTest\ValidationWithAnnotationTest.csproj", "{E1062F01-5944-4E37-B27D-85F569795A24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +107,14 @@ Global
 		{E3B39343-EA65-4E47-B612-7AF093222742}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3B39343-EA65-4E47-B612-7AF093222742}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3B39343-EA65-4E47-B612-7AF093222742}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BE317AF-999C-472E-ACA9-8F8DA058E387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BE317AF-999C-472E-ACA9-8F8DA058E387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BE317AF-999C-472E-ACA9-8F8DA058E387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BE317AF-999C-472E-ACA9-8F8DA058E387}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1062F01-5944-4E37-B27D-85F569795A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1062F01-5944-4E37-B27D-85F569795A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1062F01-5944-4E37-B27D-85F569795A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1062F01-5944-4E37-B27D-85F569795A24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,6 +132,8 @@ Global
 		{90D99AE8-6C80-4430-9BE4-91AABD57705B} = {8F066792-64A0-4C25-90BD-F15F997F6099}
 		{212A0343-9418-445A-AE8E-8413F5568DF5} = {53396813-1309-43AD-93D8-39CF98B90AF6}
 		{E3B39343-EA65-4E47-B612-7AF093222742} = {53396813-1309-43AD-93D8-39CF98B90AF6}
+		{7BE317AF-999C-472E-ACA9-8F8DA058E387} = {8F066792-64A0-4C25-90BD-F15F997F6099}
+		{E1062F01-5944-4E37-B27D-85F569795A24} = {53396813-1309-43AD-93D8-39CF98B90AF6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A3226FA-7F53-4324-935F-9B20F98BF15C}
