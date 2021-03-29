@@ -4,10 +4,26 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Web;
 
-namespace CommonLanguageExensions
+namespace CommonLanguageExtensions
 {
     public static class StringExtensions
     {
+        /// <summary>
+        /// Convert string to an enum member
+        /// </summary>
+        /// <typeparam name="T">Enum type</typeparam>
+        /// <param name="value">Value to convert</param>
+        /// <param name="defaultValue">Default value if an issue arises in the form of an empty string</param>
+        /// <returns></returns>
+        public static T ToEnum<T>(string value, T defaultValue) where T : struct
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return defaultValue;
+            }
+
+            return Enum.TryParse<T>(value, out var result) ? result : defaultValue;
+        }
         /// <summary>
         /// Split string with space e.g. FirstName becomes First Name
         /// </summary>

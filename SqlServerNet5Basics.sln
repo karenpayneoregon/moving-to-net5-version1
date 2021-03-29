@@ -33,13 +33,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormDialogs", "WinFormDi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityCoreExtensions", "EntityCoreExtensions\EntityCoreExtensions.csproj", "{1AE807B3-E216-4A6D-B2EA-E1B7B67F3A5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLanguageExensions", "CommonLanguageExensions\CommonLanguageExensions.csproj", "{90D99AE8-6C80-4430-9BE4-91AABD57705B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonLanguageExtensions", "CommonLanguageExensions\CommonLanguageExtensions.csproj", "{90D99AE8-6C80-4430-9BE4-91AABD57705B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit test projects", "Unit test projects", "{53396813-1309-43AD-93D8-39CF98B90AF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageExtensionTest", "LanguageExtensionTest\LanguageExtensionTest.csproj", "{212A0343-9418-445A-AE8E-8413F5568DF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguageExtensionTest", "LanguageExtensionTest\LanguageExtensionTest.csproj", "{212A0343-9418-445A-AE8E-8413F5568DF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkCoreProductTest", "EntityFrameworkCoreProductTest\EntityFrameworkCoreProductTest.csproj", "{E3B39343-EA65-4E47-B612-7AF093222742}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCoreProductTest", "EntityFrameworkCoreProductTest\EntityFrameworkCoreProductTest.csproj", "{E3B39343-EA65-4E47-B612-7AF093222742}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
