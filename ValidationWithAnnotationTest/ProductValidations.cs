@@ -24,7 +24,7 @@ namespace ValidationWithAnnotationTest
             Assert.IsTrue(validationResult.Errors.Count == 2);
 
             var expectedErrorMessages = new List<string>() { "ProductName Minimum 3 characters required", "Invalid ProductName" };
-            var resultingErrorMessage = validationResult.Errors.Select(x => x.ErrorMessage);
+            var resultingErrorMessage = validationResult.ErrorMessages;
             
             Assert.IsTrue(expectedErrorMessages.SequenceEqual(resultingErrorMessage),
                 "Expected specific error messages from ProductName annotations");
