@@ -89,6 +89,14 @@ namespace ConfigurationHelper
             }
         }
 
+        public static Environment GetEnvironment()
+        {
+            InitMainConfiguration();
+
+            var connectionStrings = InitOptions<ConnectionStrings>("ConnectionStrings");
+            return InitOptions<Environment>("Environment");
+        }
+
         public static List<TableContainer> ColumnTableContainers()
         {
             var config = InitMainConfiguration();
