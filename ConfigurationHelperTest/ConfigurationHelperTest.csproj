@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<LangVersion>9.0</LangVersion>
@@ -6,6 +6,11 @@
 
 		<IsPackable>false</IsPackable>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Include="bin\Debug\net5.0\AppSettings\appsettings_Dev.json" />
+	  <Content Include="bin\Debug\net5.0\AppSettings\appsettings_Prod.json" />
+	</ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
