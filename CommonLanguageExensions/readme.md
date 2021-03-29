@@ -6,8 +6,6 @@ Basic language extensions
 
 
 
-Various extensions and dialog wrappers
-
 ## String extensions
 
 ---
