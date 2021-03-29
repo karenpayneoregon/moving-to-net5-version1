@@ -4,11 +4,14 @@ Basic language extensions
 
 ![ver](../assets/Versions.png) 
 
- About
+
 
 Various extensions and dialog wrappers
 
-### String extensions
+## String extensions
+
+---
+
 
 | Extension  | &nbsp; | Description  |
 |:-------------|--|:---|
@@ -22,14 +25,20 @@ Various extensions and dialog wrappers
 | RemoveExtraSpaces  | &nbsp; | Any double spaces to single spaces |
 | DumpHRefs  | &nbsp; | Get params from a web address |
 
-### Bool extensions
+## Bool extensions
+
+---
+
 
 | Extension  | &nbsp; | Description  |
 |:-------------|--| :---|
 | ToYesNoString  | &nbsp; | to yes/no |
 
 
-### Validate extensions
+## Validate extensions
+
+---
+
 
 | Extension  | &nbsp; | Description  |
 |:-------------|--|:---|
@@ -37,7 +46,10 @@ Various extensions and dialog wrappers
 | IsValidSsnWithoutDashes  | &nbsp; | nine digits |
 
 
-### Generic extensions
+---
+
+
+## Generic extensions
 
 | Extension  | &nbsp; | Description  |
 |:-------------|--|:---|
