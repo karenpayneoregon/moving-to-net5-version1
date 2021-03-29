@@ -10,6 +10,10 @@ namespace ValidationWithAnnotationTest
     [TestClass]
     public class ProductValidations
     {
+        /// <summary>
+        /// Validate if giving a product name that violates annotation rules
+        /// the errors are triggered
+        /// </summary>
         [TestMethod]
         public void ValidateProductsNameRuleFailure()
         {
@@ -31,6 +35,9 @@ namespace ValidationWithAnnotationTest
 
 
         }
+        /// <summary>
+        /// Validate ProductName rules are satisfied 
+        /// </summary>
         [TestMethod]
         public void ValidateProductsNameRule()
         {

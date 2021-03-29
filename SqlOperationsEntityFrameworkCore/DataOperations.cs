@@ -45,6 +45,20 @@ namespace SqlOperationsEntityFrameworkCore
             return productList;
         }
 
+        public static async Task<int> Update(Products product)
+        {
+            
+            await using var context = new NorthwindContext();
+            context.Entry(product).State = EntityState.Modified;
+            return await context.SaveChangesAsync();
+        }
+
+        public static async Task<Products> GetProduct(int identifier)
+        {
+            await using var context = new NorthwindContext();
+            return context.Products.FirstOrDefault(prod => prod.ProductId == identifier);
+        }
+
         /// <summary>
         /// Example for retrieving products via nested projection
         /// </summary>

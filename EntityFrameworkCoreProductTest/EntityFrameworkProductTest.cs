@@ -1,6 +1,8 @@
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using LanguageExtensionTest.Base;
+using EntityFrameworkCoreProductTest.Base;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlOperationsEntityFrameworkCore;
 
@@ -9,6 +11,26 @@ namespace EntityFrameworkCoreProductTest
     [TestClass]
     public class EntityFrameworkProductTest : TestBase
     {
+
+        [TestInitialize]
+        public async Task Init()
+        {
+            if (TestContext.TestName == "UpdateSingleProduct")
+            {
+                await ResetUpdatedProduct();
+            }
+        }
+        [ClassInitialize()]
+        public static void MyClassInitialize(TestContext testContext)
+        {
+            TestResults = new List<TestContext>();
+        }
+        [ClassCleanup()]
+        public static async Task ClassCleanup()
+        {
+            await ResetUpdatedProduct();
+        }
+
         [TestMethod]
         public async Task GetProductsWithoutProjection()
         {
@@ -32,6 +54,47 @@ namespace EntityFrameworkCoreProductTest
                 $"Expected units in stock {expectedUnitsInStock} got {firstProduct.UnitsInStock}");
 
         }
+        /// <summary>
+        /// Validate a single product update.
+        /// </summary>
+        /// <returns></returns>
+        /// <remarks>
+        /// * Resets are done and explained in comments below
+        /// * Having SSMS open to a the following for debugging is good to learn from
+        ///   SELECT * FROM NorthWind2020.dbo.Products WHERE dbo.Products.ProductID = 4;
+        /// </remarks>
+        [TestMethod]
+        public async Task UpdateSingleProduct()
+        {
+
+            /*
+             * Init() ensures the product is in an expected state
+             */
+
+            // arrange
+            var expectedProductIdentifier = 4;
+            var expectedProductName = "Chef Anton's Cajun Seasoning";
+            
+            // act
+            var product = await DataOperations.GetProduct(expectedProductIdentifier);
+            
+            // assert
+            Assert.IsTrue(product.ProductName == expectedProductName);
+
+            // arrange
+            product.ProductName = "Chef Anton's Cajun Seasoning Inc";
+            
+            // act
+            var result = await DataOperations.Update(product);
+            
+            // assert
+            Assert.IsTrue(result == 1,"Initial update failed");
+
+            /*
+             * ClassCleanup resets the product in SQL-Server
+             */
+        }
+
 
     }
 }
