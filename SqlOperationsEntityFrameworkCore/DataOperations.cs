@@ -15,9 +15,11 @@ namespace SqlOperationsEntityFrameworkCore
         #region TODO
 
         public delegate void OnConnect(string message);
+
         public static event OnConnect ConnectMonitor;
 
         public delegate void OnAfterConnect(string message);
+
         public static event OnAfterConnect AfterConnectMonitor;
 
         #endregion
@@ -26,7 +28,12 @@ namespace SqlOperationsEntityFrameworkCore
         /// Get products by category identifier
         /// </summary>
         /// <param name="categoryIdentifier">Existing category identifier</param>
-        /// <returns></returns>
+        /// <returns>Product list</returns>
+        /// <remarks>
+        /// Note .TagWith, this will add the information to the results in SQL-Server Profiler output
+        /// which can assist a DBA and/or developer to see who wrote and executed the statement and
+        /// from what code e.g. in this case the class and method names
+        /// </remarks>
         public static async Task<List<Products>> GetProductsWithoutProjection(int categoryIdentifier)
         {
             var productList = new List<Products>();
@@ -38,6 +45,7 @@ namespace SqlOperationsEntityFrameworkCore
                 productList = await context.Products
                     .Include(product => product.Supplier)
                     .Where(product => product.CategoryId == categoryIdentifier)
+                    .TagWith($"From: {nameof(DataOperations)}.{nameof(GetProductsWithoutProjection)} by Karen Payne for teaching")
                     .ToListAsync();
 
             });
@@ -47,7 +55,7 @@ namespace SqlOperationsEntityFrameworkCore
 
         public static async Task<int> Update(Products product)
         {
-            
+
             await using var context = new NorthwindContext();
             context.Entry(product).State = EntityState.Modified;
             return await context.SaveChangesAsync();
@@ -70,7 +78,7 @@ namespace SqlOperationsEntityFrameworkCore
             await Task.Run(async () =>
             {
                 await using var context = new NorthwindContext();
-                
+
                 productList = await context.Products
                     .Include(product => product.Supplier)
                     .Select(Product.Projection)
@@ -80,6 +88,7 @@ namespace SqlOperationsEntityFrameworkCore
 
             return productList;
         }
+
         /// <summary>
         /// Example for working with dates
         /// </summary>
@@ -104,8 +113,8 @@ namespace SqlOperationsEntityFrameworkCore
 
                 productList = await context.Products
                     .Include(product => product.Supplier)
-                    .Select(Product.Projection).Where(prod => 
-                        prod.CategoryId == categoryIdentifier && 
+                    .Select(Product.Projection).Where(prod =>
+                        prod.CategoryId == categoryIdentifier &&
                         prod.DiscontinuedDate.HasValue &&
                         prod.DiscontinuedDate.Value.Year < discontinuedDate)
                     .ToListAsync();
@@ -114,6 +123,7 @@ namespace SqlOperationsEntityFrameworkCore
 
             return productList;
         }
+
         /// <summary>
         /// Return an ordered list of products first by category then by product ASC
         /// </summary>
@@ -124,7 +134,7 @@ namespace SqlOperationsEntityFrameworkCore
 
             await Task.Run(async () =>
             {
-                
+
                 var products = await GetProductsWithProjection();
 
                 productList = products
@@ -132,6 +142,32 @@ namespace SqlOperationsEntityFrameworkCore
                     .ThenBy(p => p.ProductName).ToList();
 
 
+
+            });
+
+            return productList;
+        }
+
+        public static async Task<List<Product>> GetProductsWithProjectionGroupByCategory()
+        {
+            List<Product> productList = new();
+
+            await Task.Run(async () =>
+            {
+
+                var products = await GetProductsWithProjection();
+
+                productList = products
+                    .GroupBy(product => new CategoryProduct {CategoryName = product.CategoryName, ProductName = product.ProductName})
+                    .Select(product => new Product()
+                    {
+                        ProductId = products.FirstOrDefault().ProductId,
+                        CategoryName = product.FirstOrDefault().CategoryName,
+                        CategoryId = product.FirstOrDefault().CategoryId,
+                        ProductName = product.FirstOrDefault().ProductName,
+                        SupplierName = products.FirstOrDefault().SupplierName
+                    })
+                    .ToList();
 
             });
 
@@ -151,7 +187,7 @@ namespace SqlOperationsEntityFrameworkCore
             await Task.Run(async () =>
             {
                 await using var context = new NorthwindContext();
-                
+
                 categoryList = await context.Categories
                     .AsNoTracking()
                     .ToListAsync();
@@ -161,6 +197,7 @@ namespace SqlOperationsEntityFrameworkCore
             return categoryList;
 
         }
+
         /// <summary>
         /// Simple example for converting Product list to json
         /// </summary>
@@ -168,11 +205,27 @@ namespace SqlOperationsEntityFrameworkCore
         /// <param name="fileName"></param>
         public static void ProductsAsJson(List<Product> productsList, string fileName)
         {
-            string json = JsonConvert.SerializeObject(productsList, Formatting.Indented);
-            File.WriteAllText(fileName,json);
-            Console.WriteLine();
+            string json = JsonConvert.SerializeObject(productsList, Formatting.Indented,
+                new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore
+                });
+            File.WriteAllText(fileName, json);
         }
-        /// <summary>
+
+        public static List<Product> ReadProductsFromJsonFile(string fileName)
+        {
+            List<Product> products = new();
+
+            if (File.Exists(fileName))
+            {
+                var json = File.ReadAllText(fileName);
+                products = JsonConvert.DeserializeObject<List<Product>>(json);
+            }
+            return products;
+        }
+
+    /// <summary>
         /// Remove product from database table by id
         /// </summary>
         /// <param name="productIdentifier">Product identifier</param>

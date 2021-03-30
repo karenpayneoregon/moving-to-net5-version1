@@ -29,7 +29,7 @@ namespace SqlClientTest
         /// to timeout.
         /// </remarks>
         [TestMethod]
-        [TestTraits(Trait.Read)]
+        [TestTraits(Trait.SqlClientRead)]
         public async Task GetProductsByCategory()
         {
             if (_cancellationTokenSource.IsCancellationRequested)
@@ -40,20 +40,15 @@ namespace SqlClientTest
 
             var categoryIdentifier = 1;
             var results = await DataOperations.ReadProductsUsingContainerByCategory(_cancellationTokenSource.Token, categoryIdentifier);
-            Assert.IsTrue(results.DataTable.AsEnumerable().All(row => row.Field<int>("CategoryId") == categoryIdentifier));
-
             /*
-             * Some might consider these test yet we are only interested in if the DataTable contains only the selected category
+             * Note .All() extension method, there is also .Any() where both accepts a predicate
+             *
+             * https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.all?view=net-5.0
+             * https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.any?view=net-5.0
+             * https://docs.microsoft.com/en-us/dotnet/api/system.predicate-1?view=net-5.0
+             *
              */
-
-            //var expectedProductName = "Chai";
-            //var expectedProductIdentifier = 1;
-            //var expectedUnitsInStock = 39;
-            //var firstProduct = results.DataTable.AsEnumerable().FirstOrDefault(p => p.Field<int>("CategoryId") == categoryIdentifier);
-            //Assert.IsTrue(firstProduct is not null, "Expected a product");
-            //Assert.IsTrue(firstProduct.Field<string>("ProductName") == expectedProductName, $"Expected product-name {expectedProductName} got {firstProduct.Field<string>("ProductName")}");
-            //Assert.IsTrue(firstProduct.Field<int>("ProductId") == expectedProductIdentifier, $"Expected product-id {expectedProductIdentifier} got {firstProduct.Field<int>("ProductId")}");
-            //Assert.IsTrue(firstProduct.Field<short>("UnitsInStock") == expectedUnitsInStock, $"Expected units in stock {expectedUnitsInStock} got {firstProduct.Field<short>("UnitsInStock")}");
+            Assert.IsTrue(results.DataTable.AsEnumerable().All(row => row.Field<int>("CategoryId") == categoryIdentifier));
         }
     }
 }

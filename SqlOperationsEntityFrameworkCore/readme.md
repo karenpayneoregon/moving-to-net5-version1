@@ -18,3 +18,13 @@ Example for working with [SQL-Server](https://docs.microsoft.com/en-us/sql/?view
 
 - Microsoft TechNet Entity Framework Core: [Projections and async operations](https://social.technet.microsoft.com/wiki/contents/articles/53881.entity-framework-core-3-projections.aspx)
 - Microsoft docs, [projection operations](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/projection-operations)
+
+# Misc
+
+- **Query tags**: [.TagWith](https://docs.microsoft.com/en-us/ef/core/querying/tags) (see figure 1)
+- **Tracking**: [Tracking vs No-Tracking Queries](https://docs.microsoft.com/en-us/ef/core/querying/tracking)
+
+
+**Figure 1**
+
+![image](../assets/tagwith.png)

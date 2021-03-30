@@ -97,6 +97,12 @@ namespace SqlOperations.Classes
             }, ct);
 
         }
+        /// <summary>
+        /// Read products into a DataTable with connection timeout where product is in a specific category
+        /// </summary>
+        /// <param name="ct"><seealso cref="CancellationToken"/></param>
+        /// <param name="categoryIdentifier">Existing category identifier</param>
+        /// <returns></returns>
         public static async Task<DataTableResults> ReadProductsUsingContainerByCategory(CancellationToken ct, int categoryIdentifier)
         {
 
@@ -143,8 +149,11 @@ namespace SqlOperations.Classes
             }, ct);
 
         }
-
-
+        /// <summary>
+        /// Update a single product
+        /// </summary>
+        /// <param name="product">Valid product</param>
+        /// <returns>success or failure</returns>
         public static async Task<bool> Update(Products product)
         {
             mHasException = false;
@@ -181,13 +190,18 @@ namespace SqlOperations.Classes
             }
 
         }
-        
+        /// <summary>
+        /// Example for reading data and returning via a named value tuple
+        /// https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples
+        /// </summary>
+        /// <param name="ct"></param>
+        /// <returns></returns>
         public static async Task<(bool success, DataTable dataTable, Exception exception)> ReadProductsUsingNamedValueTuple(CancellationToken ct)
         {
             
             StopWatcher.Instance.Start();
 
-            DataTable dt = new DataTable();
+            DataTable dt = new ();
 
             return await Task.Run(async () =>
             {

@@ -6,8 +6,8 @@ namespace SqlClientTest.Base
 {
     public enum Trait
     {
-        Read,
-        Update
+        SqlClientRead,
+        SqlClientUpdate
     }
     /// <summary>
     /// Declarative class for using Trait enum about for traits on test method.

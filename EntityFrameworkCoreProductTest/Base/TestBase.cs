@@ -68,5 +68,25 @@ namespace EntityFrameworkCoreProductTest.Base
             }
 
         }
+
+        public static async Task<bool> ProductCount(int count)
+        {
+            try
+            {
+                await using var cn = new SqlConnection(ConnectionString);
+                await using var cmd = new SqlCommand { Connection = cn, CommandText = "SELECT COUNT(P.ProductID) FROM  Products AS P" };
+
+                await cn.OpenAsync();
+
+                var affected = await cmd.ExecuteScalarAsync();
+
+                return (int)affected == count;
+            }
+            catch (Exception)
+            {
+                throw new AssertFailedException();
+            }
+
+        }
     }
 }

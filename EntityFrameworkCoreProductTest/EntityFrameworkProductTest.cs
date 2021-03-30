@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using EntityFrameworkCoreProductTest.Base;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlOperationsEntityFrameworkCore;
+using SqlOperationsEntityFrameworkCore.Models;
 
 namespace EntityFrameworkCoreProductTest
 {
@@ -31,6 +32,10 @@ namespace EntityFrameworkCoreProductTest
             await ResetUpdatedProduct();
         }
 
+        /// <summary>
+        /// Test for working with dates and multiple where conditions on int properties
+        /// </summary>
+        /// <returns></returns>
         [TestMethod]
         [TestTraits(Trait.DatesEntityFramework)]
         public async Task DiscontinuedDateWithoutNulls()
@@ -112,7 +117,37 @@ namespace EntityFrameworkCoreProductTest
              * ClassCleanup resets the product in SQL-Server
              */
         }
+        
+        /// <summary>
+        /// Simple GroupBy 
+        /// </summary>
+        /// <returns></returns>
+        [TestMethod]
+        [TestTraits(Trait.GroupingEntityFramework)]
+        public async Task GroupProductByCategoryThenByProduct()
+        {
+           var result = await DataOperations.GetProductsWithProjectionGroupByCategory();
+           var returnCount = result.Count;
+           var products = DataOperations.ReadProductsFromJsonFile("products.json");
+           
+           Assert.IsTrue(returnCount == products.Count);
 
+        }
+        /// <summary>
+        /// Test working with json
+        /// </summary>
+        /// <returns></returns>
+        [TestMethod]
+        [TestTraits(Trait.JsonEntityFramework)]
+        public async Task ProductListJson()
+        {
+           
+            DataOperations.ProductsAsJson(await DataOperations.GetProductsWithProjectionGroupByCategory(), "products.json");
+
+            var products = DataOperations.ReadProductsFromJsonFile("products.json");
+            Assert.IsTrue(await ProductCount(products.Count));
+            
+        }
 
     }
 }
