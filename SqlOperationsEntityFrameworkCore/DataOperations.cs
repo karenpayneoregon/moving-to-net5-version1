@@ -81,6 +81,40 @@ namespace SqlOperationsEntityFrameworkCore
             return productList;
         }
         /// <summary>
+        /// Example for working with dates
+        /// </summary>
+        /// <param name="categoryIdentifier"></param>
+        /// <param name="discontinuedDate"></param>
+        /// <returns></returns>
+        /// <remarks>
+        /// Equivalent WHERE statement
+        /// WHERE P.DiscontinuedDate IS NOT NULL AND P.CategoryID = 6 AND year(P.DiscontinuedDate) &lt; 2004
+        ///
+        /// In earlier versions of Entity Framework the following
+        ///    prod.DiscontinuedDate.Value.Year
+        /// would not be evaluated and cause a runtime exception
+        /// </remarks>
+        public static async Task<List<Product>> GetProductsNotNullDiscontinuedDate(int categoryIdentifier, int discontinuedDate)
+        {
+            var productList = new List<Product>();
+
+            await Task.Run(async () =>
+            {
+                await using var context = new NorthwindContext();
+
+                productList = await context.Products
+                    .Include(product => product.Supplier)
+                    .Select(Product.Projection).Where(prod => 
+                        prod.CategoryId == categoryIdentifier && 
+                        prod.DiscontinuedDate.HasValue &&
+                        prod.DiscontinuedDate.Value.Year < discontinuedDate)
+                    .ToListAsync();
+
+            });
+
+            return productList;
+        }
+        /// <summary>
         /// Return an ordered list of products first by category then by product ASC
         /// </summary>
         /// <returns>Task&lt;List&lt;Product&gt;&gt; ordered by category name then by product name</returns>

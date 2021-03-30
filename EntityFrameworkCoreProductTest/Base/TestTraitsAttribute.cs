@@ -7,7 +7,8 @@ namespace EntityFrameworkCoreProductTest.Base
     public enum Trait
     {
         ReadEntityFramework,
-        UpdateEntityFramework
+        UpdateEntityFramework,
+        DatesEntityFramework
     }
     /// <summary>
     /// Declarative class for using Trait enum about for traits on test method.

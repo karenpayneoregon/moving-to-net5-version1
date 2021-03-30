@@ -32,6 +32,22 @@ namespace EntityFrameworkCoreProductTest
         }
 
         [TestMethod]
+        [TestTraits(Trait.DatesEntityFramework)]
+        public async Task DiscontinuedDateWithoutNulls()
+        {
+            var categoryIdentifier = 6;
+            var discontinuedYear = 2004;
+            var expectedCount = 2;
+            
+            var result = await DataOperations
+                .GetProductsNotNullDiscontinuedDate(categoryIdentifier, discontinuedYear);
+            
+            Assert.IsTrue(result.Count == 2, 
+                $"Expected {expectedCount} products on category " + 
+                      $"{categoryIdentifier} and discontinued before {discontinuedYear}");
+        }  
+        
+        [TestMethod]
         [TestTraits(Trait.ReadEntityFramework)]
         public async Task GetProductsWithoutProjection()
         {

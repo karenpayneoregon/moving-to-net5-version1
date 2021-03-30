@@ -59,7 +59,7 @@ namespace SqlOperationsEntityFrameworkCore.Models
         /// </summary>
         public int? CategoryId { get; set; }
         public string CategoryName { get; set; }
-
+        public DateTime? DiscontinuedDate { get; set; }
         public override string ToString() => ProductName;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -81,7 +81,8 @@ namespace SqlOperationsEntityFrameworkCore.Models
                 UnitsInStock = product.UnitsInStock,
                 UnitsOnOrder = product.UnitsOnOrder, 
                 CategoryId = product.CategoryId, 
-                CategoryName = product.Category.CategoryName
+                CategoryName = product.Category.CategoryName, 
+                DiscontinuedDate = product.DiscontinuedDate
             };
 
     }
