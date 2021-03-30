@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using BaseExceptionsLibrary;
@@ -32,7 +33,7 @@ namespace SqlOperations.Classes
             {
                 await using var cn = new SqlConnection(ConnectionString);
                 await using var cmd = new SqlCommand {Connection = cn, CommandText = SelectStatement()};
-
+                
                 try
                 {
                     ConnectMonitor?.Invoke("Before open");
@@ -96,6 +97,53 @@ namespace SqlOperations.Classes
             }, ct);
 
         }
+        public static async Task<DataTableResults> ReadProductsUsingContainerByCategory(CancellationToken ct, int categoryIdentifier)
+        {
+
+            StopWatcher.Instance.Start();
+
+            var result = new DataTableResults() { DataTable = new DataTable() };
+
+            return await Task.Run(async () =>
+            {
+                await using var cn = new SqlConnection(ConnectionString);
+                await using var cmd = new SqlCommand { Connection = cn, CommandText = SelectStatement(categoryIdentifier) };
+
+                try
+                {
+                    ConnectMonitor?.Invoke("Before open");
+                    await cn.OpenAsync(ct);
+                    AfterConnectMonitor?.Invoke($"Elapsed: {StopWatcher.Instance.Elapsed}");
+                }
+#pragma warning disable 168
+                catch (TaskCanceledException tce)
+#pragma warning restore 168
+                {
+                    /*
+                     * For debug purposes we have a variable for TaskCanceledException
+                     * although we can still see it w/o tce but this is easier for those
+                     * not knowledgeable with no var for the exception
+                     */
+
+                    result.ConnectionFailed = true;
+                    result.ExceptionMessage = "Connection Failed";
+
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    result.GeneralException = ex;
+                    return result;
+                }
+
+                result.DataTable.Load(await cmd.ExecuteReaderAsync(ct));
+
+                return result;
+
+            }, ct);
+
+        }
+
 
         public static async Task<bool> Update(Products product)
         {
@@ -136,6 +184,7 @@ namespace SqlOperations.Classes
         
         public static async Task<(bool success, DataTable dataTable, Exception exception)> ReadProductsUsingNamedValueTuple(CancellationToken ct)
         {
+            
             StopWatcher.Instance.Start();
 
             DataTable dt = new DataTable();
@@ -196,6 +245,29 @@ FROM
         INNER JOIN Categories AS C ON P.CategoryID = C.CategoryID 
         INNER JOIN Suppliers AS S ON P.SupplierID = S.SupplierID";
 
+
+        private static string SelectStatement(int categoryIdentifier) =>
+            @$"
+SELECT 
+    P.ProductID, 
+    P.ProductName, 
+    P.SupplierID, 
+    S.CompanyName, 
+    P.CategoryID, 
+    C.CategoryName, 
+    P.QuantityPerUnit, 
+    P.UnitPrice, 
+    P.UnitsInStock, 
+    P.UnitsOnOrder, 
+    P.ReorderLevel, 
+    P.Discontinued, 
+    P.DiscontinuedDate 
+FROM  
+    Products AS P 
+        INNER JOIN Categories AS C ON P.CategoryID = C.CategoryID 
+        INNER JOIN Suppliers AS S ON P.SupplierID = S.SupplierID
+WHERE P.CategoryID = {categoryIdentifier}";
+
         private static string UpdateStatement =>
             @"
             UPDATE dbo.Products
@@ -210,7 +282,7 @@ FROM
                   ,Discontinued = @Discontinued
                   ,DiscontinuedDate = @DiscontinuedDate
              WHERE ProductID = @ProductID";
-        
+
         /// <summary>
         /// Used to set column header text in a DataGridView.
         /// The primary key column are abbreviated as are generally not shown

@@ -32,6 +32,7 @@ namespace EntityFrameworkCoreProductTest
         }
 
         [TestMethod]
+        [TestTraits(Trait.ReadEntityFramework)]
         public async Task GetProductsWithoutProjection()
         {
             var expectedProductName = "Chai";
@@ -64,6 +65,7 @@ namespace EntityFrameworkCoreProductTest
         ///   SELECT * FROM NorthWind2020.dbo.Products WHERE dbo.Products.ProductID = 4;
         /// </remarks>
         [TestMethod]
+        [TestTraits(Trait.UpdateEntityFramework)]
         public async Task UpdateSingleProduct()
         {
 

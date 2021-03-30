@@ -34,12 +34,12 @@ namespace SqlOperations.Classes
                 };
 
                 return (products = new Products(), true, null);
+                
             }
             catch (Exception ex)
             {
                 return (new Products(), false, ex);
             }
-
 
 
         }

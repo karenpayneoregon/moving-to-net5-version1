@@ -34,6 +34,7 @@ namespace ValidationWithAnnotationTest
         /// the errors are triggered
         /// </summary>
         [TestMethod]
+        [TestTraits(Trait.DataAnnotations)]
         public void ValidateProductsNameRuleFailure()
         {
             // arrange
@@ -58,6 +59,7 @@ namespace ValidationWithAnnotationTest
         /// Validate ProductName rules are satisfied 
         /// </summary>
         [TestMethod]
+        [TestTraits(Trait.DataAnnotations)]
         public void ValidateProductsNameRule()
         {
             // arrange

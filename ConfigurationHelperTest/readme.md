@@ -10,3 +10,7 @@ Unit test for testing NorthWind2020 Products using Entity Framework Core from co
 ![ver](../assets/Versions.png) 
 
 ![test](../assets/unitTesting.png)
+
+# Talk about in class
+
+![image](../assets/errorTest.png)

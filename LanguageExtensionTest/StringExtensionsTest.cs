@@ -30,6 +30,7 @@ namespace LanguageExtensionTest
         }
 
         [TestMethod]
+        [TestTraits(Trait.StringExtensions)]
         public void IsEmptyOrWhitespace()
         {
             // arrange 
@@ -50,6 +51,7 @@ namespace LanguageExtensionTest
         /// a parameter we are looking for and one that does not
         /// </summary>
         [TestMethod]
+        [TestTraits(Trait.StringExtensions)]
         public void DumpHRefs()
         {
             // arrange
@@ -72,6 +74,7 @@ namespace LanguageExtensionTest
         }
 
         [TestMethod]
+        [TestTraits(Trait.StringExtensions)]
         public void SplitCamelCase()
         {
             // arrange

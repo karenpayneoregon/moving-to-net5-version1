@@ -17,6 +17,7 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\DataGridViewHelpers\DataGridViewHelpers.csproj" />
 	  <ProjectReference Include="..\DataTableHelpers\DataTableHelpers.csproj" />
+	  <ProjectReference Include="..\QueryContainerLibrary\QueryContainerLibrary.vbproj" />
 	  <ProjectReference Include="..\SqlOperations\SqlOperations.csproj" />
 	  <ProjectReference Include="..\StopWatchLibrary\StopWatchLibrary.csproj" />
 	  <ProjectReference Include="..\WinFormsHelpers\WinFormsHelpers.csproj" />

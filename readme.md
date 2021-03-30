@@ -26,10 +26,12 @@
 |WinFormDialogs| - |Wrapper class for common dialog(s) |
 |CommonLanguageExensions| -| String extension methods |
 |EntityFrameworkCoreProductTest| :white_circle:| Unit tests for validating EF Core operations on product model from [SqlOperationsEntityFrameworkCore](https://github.com/karenpayneoregon/moving-to-net5-version1/tree/master/SqlOperationsEntityFrameworkCore) |
+|SqlClientTest| :white_circle:| Unit tests for validating SqlClient data provider operations  |
 |LanguageExtensionTest| :white_circle: | Validates extension methods in [CommonLanguageExtensions](https://github.com/karenpayneoregon/moving-to-net5-version1/tree/master/CommonLanguageExensions) project |
 |ValidationLibrary  | |Data annotation validation library |
 |ValidationWithAnnotationTest |:white_circle: | Validates ValidationLibrary |
 |BaseExceptionsLibrary |- | Exception helper |
+|QueryContainerLibrary |:large_blue_circle: | query storage |
 
 
 <br/>
@@ -39,6 +41,8 @@
 :yellow_circle: SQL client data provider
 
 :white_circle: Unit test
+
+:large_blue_circle: VB.NET code
 
 ![vers](assets/Versions.png) 
 ![ef](assets/efcore.png)
