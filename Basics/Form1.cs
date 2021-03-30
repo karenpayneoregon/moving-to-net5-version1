@@ -4,7 +4,8 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using BasicRead.Classes;
+using BaseExceptionsLibrary;
+using BasicRead.Extensions;
 using DataGridViewHelpers;
 using SqlOperations.Classes;
 using WinFormsHelpers;
@@ -16,7 +17,7 @@ namespace BasicRead
     
     public partial class Form1 : Form
     {
-        private BindingSource _bindingSource = new BindingSource();
+        private readonly BindingSource _bindingSource = new();
         /// <summary>
         /// How many seconds to wait for a successful or failed connection to open or not
         /// </summary>
@@ -99,9 +100,11 @@ namespace BasicRead
                 dataGridView1.DataSource = _bindingSource;
 
                 var columnDict = DataOperations.GetDataGridViewColumnText();
+                
                 foreach (DataGridViewColumn dataGridViewColumn in dataGridView1.Columns)
                 {
                     Debug.WriteLine(dataGridViewColumn.Name);
+                    
                     if (columnDict.ContainsKey(dataGridViewColumn.Name))
                     {
                         dataGridViewColumn.HeaderText = columnDict[dataGridViewColumn.Name];
@@ -131,6 +134,30 @@ namespace BasicRead
             var productName = current.Field<string>("ProductName");
 
             MessageBox.Show($"{productId}\n{productName}");
+        }
+        /// <summary>
+        /// Example for updating a record using the current row in the BindingSource
+        /// </summary>
+        /// <param name="sender">UpdateButton</param>
+        /// <param name="e"></param>
+        private async void UpdateButton_Click(object sender, EventArgs e)
+        {
+            if (_bindingSource.Current is null)
+            {
+                return;
+            }
+
+
+            var (products, success, exception) = Converters.ToProducts(_bindingSource.Current.ToDataRow());
+
+            if (success)
+            {
+                await DataOperations.Update(products);
+
+                MessageBox.Show(BaseExceptionProperties.IsSuccessFul ?
+                    "Success" :
+                    BaseExceptionProperties.LastExceptionMessage);
+            }
         }
     }
 }

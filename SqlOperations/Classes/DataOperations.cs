@@ -4,13 +4,14 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading;
 using System.Threading.Tasks;
+using BaseExceptionsLibrary;
 using ConfigurationHelper;
 using DataTableHelpers;
 using StopWatchLibrary;
 
 namespace SqlOperations.Classes
 {
-    public class DataOperations
+    public class DataOperations : BaseExceptionProperties
     {
         private static readonly string ConnectionString = Helper.GetConnectionString();
         
@@ -22,6 +23,7 @@ namespace SqlOperations.Classes
 
         public static async Task<DataTableResults> ReadProductsUsingContainer(CancellationToken ct)
         {
+            
             StopWatcher.Instance.Start();
             
             var result = new DataTableResults() { DataTable = new DataTable() };
@@ -94,6 +96,44 @@ namespace SqlOperations.Classes
             }, ct);
 
         }
+
+        public static async Task<bool> Update(Products product)
+        {
+            mHasException = false;
+            
+            await using var cn = new SqlConnection(ConnectionString);
+            await using var cmd = new SqlCommand { Connection = cn, CommandText = SelectStatement() };
+
+            try
+            {
+
+                cmd.Parameters.AddWithValue("@ProductName", product.ProductName);
+                cmd.Parameters.AddWithValue("@SupplierID", product.SupplierId);
+                cmd.Parameters.AddWithValue("@CategoryID", product.CategoryId);
+                cmd.Parameters.AddWithValue("@QuantityPerUnit", product.QuantityPerUnit);
+                cmd.Parameters.AddWithValue("@UnitPrice", product.UnitPrice);
+                cmd.Parameters.AddWithValue("@UnitsInStock", product.UnitsInStock);
+                cmd.Parameters.AddWithValue("@UnitsOnOrder", product.UnitsOnOrder);
+                cmd.Parameters.AddWithValue("@ReorderLevel", product.ReorderLevel);
+                cmd.Parameters.AddWithValue("@Discontinued", product.Discontinued);
+                cmd.Parameters.AddWithValue("@DiscontinuedDate", product.DiscontinuedDate);
+                cmd.Parameters.AddWithValue("@ProductID", product.ProductId);
+                
+                
+                return cmd.ExecuteNonQuery() == 1;
+                
+            }
+            catch (Exception e)
+            {
+                mHasException = true;
+                mLastException = e;
+                
+                return false;
+                
+            }
+
+        }
+        
         public static async Task<(bool success, DataTable dataTable, Exception exception)> ReadProductsUsingNamedValueTuple(CancellationToken ct)
         {
             StopWatcher.Instance.Start();
@@ -129,8 +169,6 @@ namespace SqlOperations.Classes
 
             }, ct);
 
-            
-
         }
 
         /// <summary>
@@ -158,6 +196,21 @@ FROM
         INNER JOIN Categories AS C ON P.CategoryID = C.CategoryID 
         INNER JOIN Suppliers AS S ON P.SupplierID = S.SupplierID";
 
+        private static string UpdateStatement =>
+            @"
+            UPDATE dbo.Products
+               SET ProductName = @ProductName
+                  ,SupplierID = @SupplierID
+                  ,CategoryID = @CategoryID
+                  ,QuantityPerUnit = @QuantityPerUnit
+                  ,UnitPrice = @UnitPrice
+                  ,UnitsInStock = @UnitsInStock
+                  ,UnitsOnOrder = @UnitsOnOrder
+                  ,ReorderLevel = @ReorderLevel
+                  ,Discontinued = @Discontinued
+                  ,DiscontinuedDate = @DiscontinuedDate
+             WHERE ProductID = @ProductID";
+        
         /// <summary>
         /// Used to set column header text in a DataGridView.
         /// The primary key column are abbreviated as are generally not shown

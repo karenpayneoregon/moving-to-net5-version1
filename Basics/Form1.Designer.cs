@@ -34,6 +34,7 @@ namespace BasicRead
             this.label1 = new System.Windows.Forms.Label();
             this.ProductNameTextBox = new System.Windows.Forms.TextBox();
             this.CurrentButton = new System.Windows.Forms.Button();
+            this.UpdateButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,11 +82,22 @@ namespace BasicRead
             this.CurrentButton.UseVisualStyleBackColor = true;
             this.CurrentButton.Click += new System.EventHandler(this.CurrentButton_Click);
             // 
+            // UpdateButton
+            // 
+            this.UpdateButton.Location = new System.Drawing.Point(138, 369);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(120, 23);
+            this.UpdateButton.TabIndex = 6;
+            this.UpdateButton.Text = "Update";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 404);
+            this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.CurrentButton);
             this.Controls.Add(this.ProductNameTextBox);
             this.Controls.Add(this.label1);
@@ -107,6 +119,7 @@ namespace BasicRead
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox ProductNameTextBox;
         private System.Windows.Forms.Button CurrentButton;
+        private System.Windows.Forms.Button UpdateButton;
     }
 }
 
