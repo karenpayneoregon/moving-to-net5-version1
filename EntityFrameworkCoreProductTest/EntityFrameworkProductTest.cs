@@ -13,6 +13,10 @@ namespace EntityFrameworkCoreProductTest
     public class EntityFrameworkProductTest : TestBase
     {
 
+        /// <summary>
+        /// Perform initialization before each test runs
+        /// </summary>
+        /// <returns></returns>
         [TestInitialize]
         public async Task Init()
         {
@@ -21,11 +25,19 @@ namespace EntityFrameworkCoreProductTest
                 await ResetUpdatedProduct();
             }
         }
+        /// <summary>
+        /// Perform any initialize for the class
+        /// </summary>
+        /// <param name="testContext"></param>
         [ClassInitialize()]
         public static void MyClassInitialize(TestContext testContext)
         {
             TestResults = new List<TestContext>();
         }
+        /// <summary>
+        /// Here is where any clean operations are performed for this class
+        /// </summary>
+        /// <returns></returns>
         [ClassCleanup()]
         public static async Task ClassCleanup()
         {
