@@ -63,7 +63,10 @@ namespace EntityFrameworkCoreProductTest
                 $"Expected {expectedCount} products on category " + 
                       $"{categoryIdentifier} and discontinued before {discontinuedYear}");
         }  
-        
+        /// <summary>
+        /// Validation returning data for productions by category identifier
+        /// </summary>
+        /// <returns></returns>
         [TestMethod]
         [TestTraits(Trait.ReadEntityFramework)]
         public async Task GetProductsWithoutProjection()
