@@ -1,0 +1,15 @@
+﻿Imports System.Runtime.CompilerServices
+
+Namespace CommonLanguageExtensions
+    Public Module BoolExtensions
+        ''' <summary>
+        ''' Convert bool to English text
+        ''' </summary>
+        ''' <param name="value"></param>
+        ''' <returns></returns>
+        <Extension>
+        Public Function ToYesNoString(value As Boolean) As String
+            Return If(value, "Yes", "No")
+        End Function
+    End Module
+End Namespace
