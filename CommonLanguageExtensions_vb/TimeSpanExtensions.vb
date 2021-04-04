@@ -10,7 +10,7 @@ Namespace CommonLanguageExtensions
         ''' <returns></returns>
         <Extension>
         Public Function Formatted(sender As TimeSpan, Optional format As String = "hh:mm tt") As String
-            Return DateTime.Today.Add(sender).ToString(format)
+            Return Date.Today.Add(sender).ToString(format)
         End Function
     End Module
 End Namespace
