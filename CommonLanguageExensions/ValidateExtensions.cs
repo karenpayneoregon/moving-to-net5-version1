@@ -34,7 +34,7 @@ namespace CommonLanguageExtensions
         /// <summary>
         /// Remove hyphens from string
         /// </summary>
-        /// <param name="ssn"></param>
+        /// <param name="ssn">SSN to work with</param>
         /// <returns>SSN without hyphens</returns>
         public static string CleanSsn(this string ssn) => ssn.Replace("-", "");
     }
