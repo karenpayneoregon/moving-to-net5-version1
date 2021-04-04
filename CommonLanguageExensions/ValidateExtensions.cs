@@ -16,15 +16,15 @@ namespace CommonLanguageExtensions
         ///   Another dash (separating Group and Serial numbers)
         ///   Don't allow last four digits to be "0000"
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
+        /// <param name="value">SSN to validate</param>
+        /// <returns>SSN passed validation</returns>
         public static bool IsValidSsnWithoutDashes(this string value) => Regex.IsMatch(value.CleanSsn(), @"^(?!\b(\d)\1+\b)(?!123456789|219099999|078051120)(?!666|000|9\d{2})\d{3}(?!00)\d{2}(?!0{4})\d{4}$");
 
         /// <summary>
         /// Simple validate 9 digits
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
+        /// <param name="value">SSN to validate</param>
+        /// <returns>SSN passed validation</returns>
         public static bool IsValidSsnSimple(this string value)
         {
             var regexItem = new Regex(@"^\d{9}$");
@@ -35,7 +35,7 @@ namespace CommonLanguageExtensions
         /// Remove hyphens from string
         /// </summary>
         /// <param name="ssn"></param>
-        /// <returns></returns>
+        /// <returns>SSN without hyphens</returns>
         public static string CleanSsn(this string ssn) => ssn.Replace("-", "");
     }
 }

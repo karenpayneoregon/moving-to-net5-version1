@@ -472,7 +472,7 @@ Remove hyphens from string
 
 ##### Returns
 
-
+SSN without hyphens
 
 ##### Parameters
 
@@ -489,13 +489,13 @@ Simple validate 9 digits
 
 ##### Returns
 
-
+SSN passed validation
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | SSN to validate |
 
 <a name='M-CommonLanguageExtensions-ValidateExtensions-IsValidSsnWithoutDashes-System-String-'></a>
 ### IsValidSsnWithoutDashes(value) `method`
@@ -512,10 +512,10 @@ Validate
 
 ##### Returns
 
-
+SSN passed validation
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | SSN to validate |
