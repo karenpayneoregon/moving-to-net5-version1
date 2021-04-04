@@ -11,4 +11,6 @@ Language extensions for [DataGridView](https://docs.microsoft.com/en-us/dotnet/a
 |public|ToDelimitedWithHeaders    | Creates a string array of rows and cells with column headers  |
 | |
 
+:heavy_check_mark: copy code to a .NET Framework project and the code will work.
+
 
