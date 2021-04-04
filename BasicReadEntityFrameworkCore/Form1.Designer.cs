@@ -43,6 +43,7 @@ namespace BasicReadEntityFrameworkCore
             this.ExportProductsJsonButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.ProductIdentifierTextBox = new System.Windows.Forms.TextBox();
+            this.CsvExportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,11 +160,22 @@ namespace BasicReadEntityFrameworkCore
             this.ProductIdentifierTextBox.Size = new System.Drawing.Size(100, 23);
             this.ProductIdentifierTextBox.TabIndex = 13;
             // 
+            // CsvExportButton
+            // 
+            this.CsvExportButton.Location = new System.Drawing.Point(668, 326);
+            this.CsvExportButton.Name = "CsvExportButton";
+            this.CsvExportButton.Size = new System.Drawing.Size(120, 23);
+            this.CsvExportButton.TabIndex = 14;
+            this.CsvExportButton.Text = "To CSV";
+            this.CsvExportButton.UseVisualStyleBackColor = true;
+            this.CsvExportButton.Click += new System.EventHandler(this.CsvExportButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 390);
+            this.Controls.Add(this.CsvExportButton);
             this.Controls.Add(this.ProductIdentifierTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ExportProductsJsonButton);
@@ -197,6 +209,7 @@ namespace BasicReadEntityFrameworkCore
         private System.Windows.Forms.Button ExportProductsJsonButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox ProductIdentifierTextBox;
+        private System.Windows.Forms.Button CsvExportButton;
     }
 }
 

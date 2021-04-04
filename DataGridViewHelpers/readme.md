@@ -7,6 +7,8 @@ Language extensions for [DataGridView](https://docs.microsoft.com/en-us/dotnet/a
 |Scope|Method   |Definition   |
 | :---         |  :---  | :--- |
 |public|ExpandColumns    | Expand each DataGridView column to show all data  |
+|public|ToDelimited    | Creates a string array of rows and cells  |
+|public|ToDelimitedWithHeaders    | Creates a string array of rows and cells with column headers  |
 | |
 
 

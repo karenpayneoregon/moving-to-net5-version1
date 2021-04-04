@@ -176,5 +176,14 @@ namespace BasicReadEntityFrameworkCore
             DataOperations.ProductsAsJson(productList,fileName);
            
         }
+
+        private void CsvExportButton_Click(object sender, EventArgs e)
+        {
+
+            File.WriteAllLines("Exported.csv", dataGridView1.ToDelimitedWithHeaders().ToList());
+        }
+
+
+
     }
 }
