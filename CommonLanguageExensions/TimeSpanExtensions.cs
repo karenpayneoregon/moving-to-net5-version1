@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CommonLanguageExtensions
 {
+    /// <summary>
+    /// TimeSpan extensions
+    /// </summary>
     public static class TimeSpanExtensions
     {
         /// <summary>

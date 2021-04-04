@@ -28,7 +28,7 @@ namespace CommonLanguageExtensions
             
             var resultShort = $"{dt.Year:D2}{dateSeparator}{dt.Month:D2}{dateSeparator}{dt.Day:D2} {dt.Hour:D2}{timeSeparator}{dt.Minute:D2}{timeSeparator}{dt.Second:D2}";
             
-            /*
+            /* rather long line and when split to multiple lines, still a good deal of code unlike the line above
             var resultLong = 
                 dt.Year.ToString("D2") + 
                 dateSeparator + 

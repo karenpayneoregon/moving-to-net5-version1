@@ -44,6 +44,18 @@ Namespace VisualBasicLanguageExensionTest
             Assert.IsTrue(Not value.IsNullOrWhiteSpace())
 
         End Sub
+        <TestMethod>
+        <TestTraits(Trait.DateTimeExtensionsVbnet)>
+        Sub OffSetTinkering()
+            Dim dstDate = New DateTime(Now.Year, Now.Month, Now.Day, 0, 0, 0)
+
+            Dim thisTime As New DateTimeOffset(dstDate, New TimeSpan(-7, 0, 0))
+            Console.WriteLine("{0} could belong to the following time zones:", thisTime.ToString())
+            thisTime.ShowPossibleTimeZones().ForEach(AddressOf Console.WriteLine)
+
+            Console.WriteLine($"[{dstDate.ZeroPad()}]")
+            Console.WriteLine($"[{dstDate.ZeroPadWithoutSeconds()}]")
+        End Sub
 
         ''' <summary>
         ''' Here is where preparation is done before specific test

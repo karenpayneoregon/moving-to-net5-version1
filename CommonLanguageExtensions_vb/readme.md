@@ -58,3 +58,13 @@ Basic language extensions
 
 
 
+## DateTime/DateTimeOffset extensions
+
+| Extension  | &nbsp; | Description  |
+|:-------------|--|:---|
+| ZeroPad  | &nbsp; | Returns passed datetime with zero padding using current culture separators with seconds |
+| ZeroPadWithoutSeconds  | &nbsp; | Returns passed datetime with zero padding using current culture separators, without seconds |
+| ShowPossibleTimeZones  | &nbsp; | Show possible time zone for a DateTimeOffset |
+
+
+

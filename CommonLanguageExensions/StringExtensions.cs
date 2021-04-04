@@ -6,6 +6,9 @@ using System.Web;
 
 namespace CommonLanguageExtensions
 {
+    /// <summary>
+    /// String extensions
+    /// </summary>
     public static class StringExtensions
     {
         /// <summary>
@@ -44,7 +47,12 @@ namespace CommonLanguageExtensions
         /// <param name="text">text to work against</param>
         /// <returns>A string devoid of anything other than numeric values</returns>
         public static string StripperNumbers(this string text) => Regex.Replace(text, "[^A-Za-z]", "");
-
+        /// <summary>
+        /// Get numbers from string
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="result"></param>
+        /// <returns></returns>
         public static bool AlphaToInteger(this string text, ref int result)
         {
             var value = Regex.Replace(text, "[^0-9]", "");

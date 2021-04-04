@@ -1,5 +1,8 @@
 ﻿namespace CommonLanguageExtensions
 {
+    /// <summary>
+    /// Language extensions for type bool
+    /// </summary>
     public static class BoolExtensions
     {
         /// <summary>

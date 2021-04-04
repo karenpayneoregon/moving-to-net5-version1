@@ -2,6 +2,9 @@
 
 namespace CommonLanguageExtensions
 {
+    /// <summary>
+    /// Generic language extensions
+    /// </summary>
     public static class GenericExtensions
     {
         /// <summary>

@@ -2,6 +2,9 @@
 
 namespace CommonLanguageExtensions
 {
+    /// <summary>
+    /// Validation extensions
+    /// </summary>
     public static class ValidateExtensions
     {
         /// <summary>

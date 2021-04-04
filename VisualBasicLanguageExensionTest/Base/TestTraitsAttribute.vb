@@ -4,6 +4,7 @@ Public Enum Trait
     StringExtensionsVbnet
     BoolExtensionsVbnet
     TimeSpanExtensionsVbnet
+    DateTimeExtensionsVbnet
 End Enum
 ''' <summary>
 ''' Declarative class for using Trait enum about for traits on test method.
