@@ -4,6 +4,9 @@ Imports System.Runtime.CompilerServices
 Imports System.Text.RegularExpressions
 
 Namespace CommonLanguageExtensions
+    ''' <summary>
+    ''' Validation extension examples
+    ''' </summary>
     Public Module ValidateExtensions
         ''' <summary>
         ''' Validate

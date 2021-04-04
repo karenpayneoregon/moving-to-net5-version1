@@ -5,6 +5,9 @@ Basic language extensions
 ![ver](../assets/Versions.png) 
 
 
+# Important
+
+The `namespace` in code is different than under project properties so that when teaching this project code may be used in C# code samples and vice versa.
 
 ## String extensions
 

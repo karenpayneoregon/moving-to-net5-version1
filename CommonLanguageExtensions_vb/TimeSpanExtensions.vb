@@ -1,6 +1,9 @@
 ﻿Imports System.Runtime.CompilerServices
 
 Namespace CommonLanguageExtensions
+    ''' <summary>
+    ''' TimeSpan extensions
+    ''' </summary>
     Public Module TimeSpanExtensions
         ''' <summary>
         ''' Format a TimeSpan with AM PM

@@ -195,7 +195,7 @@ True if in range, false if not in range
 
 ##### Example
 
-```
+```csharp
 var startDate = new DateTime(2018, 12, 2, 1, 12, 0);
 var endDate = new DateTime(2018, 12, 15, 1, 12, 0);
 var theDate = new DateTime(2018, 12, 13, 1, 12, 0);
@@ -478,7 +478,7 @@ SSN without hyphens
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| ssn | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| ssn | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | SSN to work with |
 
 <a name='M-CommonLanguageExtensions-ValidateExtensions-IsValidSsnSimple-System-String-'></a>
 ### IsValidSsnSimple(value) `method`

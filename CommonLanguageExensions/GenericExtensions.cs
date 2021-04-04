@@ -16,7 +16,7 @@ namespace CommonLanguageExtensions
         /// <param name="maximumValue">Upper of range</param>
         /// <returns>True if in range, false if not in range</returns>
         /// <example>
-        /// <code>
+        /// <code lang="csharp">
         /// var startDate = new DateTime(2018, 12, 2, 1, 12, 0);
         /// var endDate = new DateTime(2018, 12, 15, 1, 12, 0);
         /// var theDate = new DateTime(2018, 12, 13, 1, 12, 0);
