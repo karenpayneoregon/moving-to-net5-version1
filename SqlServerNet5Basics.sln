@@ -22,6 +22,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{118B2529-A5A2-4F61-A28D-E76ED8CD7954}"
 	ProjectSection(SolutionItems) = preProject
 		entityframework.md = entityframework.md
+		markdownPackage.md = markdownPackage.md
 		migration.md = migration.md
 		readme.md = readme.md
 		resources.md = resources.md
@@ -64,7 +65,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CommonLanguageExtensions_vb
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VisualBasicLanguageExensionTest", "VisualBasicLanguageExensionTest\VisualBasicLanguageExensionTest.vbproj", "{18CF4063-5722-4FD8-ACA8-78D6C2988951}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinkering", "Tinkering\Tinkering.csproj", "{FF441845-BA84-46BA-91B4-4117CC053F28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tinkering", "Tinkering\Tinkering.csproj", "{FF441845-BA84-46BA-91B4-4117CC053F28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
