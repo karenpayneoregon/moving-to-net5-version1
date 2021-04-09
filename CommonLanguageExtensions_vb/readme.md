@@ -2,6 +2,9 @@
 
 Basic language extensions
 
+![img](https://img.shields.io/badge/Karen%20Payne-MVP-lightgrey)
+
+
 ![ver](../assets/Versions.png) 
 
 

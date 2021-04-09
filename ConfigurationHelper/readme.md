@@ -4,7 +4,12 @@ Contains help methods to configure a [DbContext](https://docs.microsoft.com/en-u
 
 Although [C# 9](https://devblogs.microsoft.com/dotnet/welcome-to-c-9-0/) is used (configured in each project file) the majority of code will work with lower versions of C# while the recommendation is to use C# 9.
 
+![img](https://img.shields.io/badge/Karen%20Payne-MVP-lightgrey)
+
+
+
 ![versions](../assets/Versions.png)
+
 
 
 |Scope|Method/property   |Definition   |

@@ -4,10 +4,16 @@ This library contains code to perform validation on properties in a class rigged
 
 Normally this project will be in a team library, referenced conventionally or from a public or internal NuGet feed.
 
+![img](https://img.shields.io/badge/Karen%20Payne-MVP-lightgrey)
+
 :heavy_check_mark: Code presented was ported from 
 
 - A .NET Framework classic to .NET Core Framework class project
 - Converted from VB.NET to C#
+
+![image](../assets/Versions.png)
+
+
 
 # Microsoft TechNet article
 

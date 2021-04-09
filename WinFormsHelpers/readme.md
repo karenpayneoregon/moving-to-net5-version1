@@ -2,6 +2,8 @@
 
 Shared class project used for .NET Core 5 projects.
 
+![img](https://img.shields.io/badge/Karen%20Payne-MVP-lightgrey)
+
 --- 
 
 :green_circle:  **ControlExtensions.InvokeIfRequired**
@@ -17,6 +19,7 @@ Provides generic [Invoke](https://docs.microsoft.com/en-us/dotnet/api/system.win
 :heavy_check_mark: C# 9
 
 ![net](assets/Versions.png)
+
 
 **SortableBindingList&lt;T&gt;**
 

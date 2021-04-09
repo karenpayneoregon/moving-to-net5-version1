@@ -7,6 +7,8 @@ with [asynchronous](https://docs.microsoft.com/en-us/dotnet/csharp/programming-g
 
 :heavy_check_mark: Uses C#8, C#9 features
 
+![img](https://img.shields.io/badge/Karen%20Payne-MVP-lightgrey)
+
 ![screen](assets/f1.png)
 
 ## Entity Framework Core

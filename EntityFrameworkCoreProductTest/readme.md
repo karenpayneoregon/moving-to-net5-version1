@@ -2,6 +2,8 @@
 
 Unit test for testing NorthWind2020 Products using Entity Framework Core from code in SqlOperationsEntityFrameworkCore project.
 
+![img](https://img.shields.io/badge/Karen%20Payne-MVP-lightgrey)
+
 # See also
 
 GitHub repository [Entity FrameworkCore In Memory Testing](https://github.com/karenpayneoregon/EntityFrameworkCoreInMemoryTesting)

@@ -2,8 +2,10 @@
 
 Basic language extensions
 
-![ver](../assets/Versions.png) 
+![img](https://img.shields.io/badge/Karen%20Payne-MVP-lightgrey)
 
+
+![ver](../assets/Versions.png) 
 
 
 ## String extensions

@@ -2,8 +2,11 @@
 
 Class project for all [SQL-Server](https://docs.microsoft.com/en-us/sql/?view=sql-server-ver15) data operations
 
+![img](https://img.shields.io/badge/Karen%20Payne-MVP-lightgrey)
 
 ![versions](../assets/Versions.png)
+
+
 
 
 |Scope|Method/property   |Definition   |

@@ -2,7 +2,11 @@
 
 Language extensions for [DataGridView](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.datagridview?view=net-5.0) control.
 
+![img](https://img.shields.io/badge/Karen%20Payne-MVP-lightgrey)
+
+
 ![version](../assets/Versions.png)
+
 
 |Scope|Method   |Definition   |
 | :---         |  :---  | :--- |
