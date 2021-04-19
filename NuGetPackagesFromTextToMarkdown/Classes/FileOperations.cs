@@ -19,7 +19,9 @@ namespace NuGetPackagesFromTextToMarkdown.Classes
         public static void ProcessFile()
         {
             List<NuGetPackage> packages = new();
-            var lines = File.ReadAllLines("input.txt").Where(line => !string.IsNullOrWhiteSpace(line)).ToList();
+            
+            var lines = File.ReadAllLines("input.txt")
+                .Where(line => !string.IsNullOrWhiteSpace(line)).ToList();
 
             var headerLine = lines.FirstOrDefault();
 
@@ -54,28 +56,27 @@ namespace NuGetPackagesFromTextToMarkdown.Classes
             File.WriteAllText("out.md",sb.ToString());
 
         }
-
-        public static List<ProjectNuGetPackages> ProcessProjectFile(string fileName)
+        /// <summary>
+        /// Get NuGet package references from project file
+        /// </summary>
+        /// <param name="projectFileName">Path and file name of a project in the solution</param>
+        /// <returns></returns>
+        public static List<ProjectNuGetPackages> ProcessProjectFile(string projectFileName)
         {
             List<ProjectNuGetPackages> projectNuGetPackages = new();
 
-            if (fileName.Contains("BasicRead"))
-            {
-                Console.WriteLine();
-            }
-
-            var content = File.ReadAllText(fileName);
+            var content = File.ReadAllText(projectFileName);
             var document = XDocument.Parse(content);
             
-            var packageReferences = document.XPathSelectElements("//PackageReference")
+            var packageReferences = document
+                .XPathSelectElements("//PackageReference")
                 .Select(element => new PackageReference
                 {
                     Include = element.Attribute("Include").Value,
                     Version = new Version(element.Attribute("Version").Value)
                 });
 
-            ProjectNuGetPackages pnp = new ProjectNuGetPackages() {ProjectName = Path.GetFileName(fileName) };
-            
+            var pnp = new ProjectNuGetPackages() {ProjectName = Path.GetFileName(projectFileName) };
             
             foreach (var packageReference in packageReferences)
             {

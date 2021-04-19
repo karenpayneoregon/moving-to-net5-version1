@@ -11,14 +11,19 @@ namespace NuGetPackagesFromTextToMarkdown
 {
     class Program
     {
+        /// <summary>
+        /// As coded packages are grouped by project
+        /// rather than what's seen in Package Manager Console.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
 
             NuGetPackagesContainer.EachProject += OnEachProject;
             NuGetPackagesContainer.EachPackage += OnEachPackage;
 
-            var operations = NuGetPackageOperations.Scan();
-            operations.Iterate();
+            var container = NuGetPackageOperations.Scan();
+            container.Iterate();
             Console.ReadLine();
         }
 

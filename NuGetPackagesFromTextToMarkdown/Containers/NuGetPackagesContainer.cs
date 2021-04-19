@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace NuGetPackagesFromTextToMarkdown.Containers
@@ -35,6 +36,9 @@ namespace NuGetPackagesFromTextToMarkdown.Containers
         /// </summary>
         public void Iterate()
         {
+            IterateToConsole();
+            return;
+            
             foreach (var nuGetPackage in PackagesList)
             {
                 EachProject?.Invoke(nuGetPackage.FirstOrDefault().ProjectName);
@@ -44,6 +48,31 @@ namespace NuGetPackagesFromTextToMarkdown.Containers
                 }
             }
         }
+
+        private void IterateToConsole()
+        {
+            List<IGrouping<string, ProjectNuGetPackages>> groupResults = 
+                PackagesList.SelectMany(projectPackages => projectPackages)
+                    .GroupBy(@group => @group.ListPackages().Include)
+                    .ToList();
+
+            foreach (IGrouping<string, ProjectNuGetPackages> result in groupResults)
+            {
+                Console.WriteLine(result.Key);
+                foreach (var p in result)
+                {
+                    Console.WriteLine($"\t{Path.GetFileNameWithoutExtension(p.ProjectName)}");
+                    foreach (var pPackageReference in p.PackageReferences)
+                    {
+                        Console.WriteLine($"\t\t{pPackageReference.Include,-50}{pPackageReference.Version}");
+                    }
+                }
+            }
+
+            Console.WriteLine();
+        }
+
+
     }
     
     /// <summary>

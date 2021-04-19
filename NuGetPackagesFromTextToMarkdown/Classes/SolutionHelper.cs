@@ -24,6 +24,7 @@ namespace NuGetPackagesFromTextToMarkdown.Classes
             try
             {
                 var content = File.ReadAllText(solutionName);
+                
                 var projReg = new Regex("Project\\(\"\\{[\\w-]*\\}\"\\) = \"([\\w _]*.*)\", \"(.*\\.(cs|vcx|vb)proj)\"", RegexOptions.Compiled);
 
                 var matches = projReg.Matches(content).Cast<Match>();
@@ -34,7 +35,6 @@ namespace NuGetPackagesFromTextToMarkdown.Classes
                     if (!Path.IsPathRooted(projects[index]))
                     {
                         projects[index] = Path.Combine(path1: Path.GetDirectoryName(solutionName), path2: projects[index]);
-                        //Console.WriteLine($"{index} : {Path.GetDirectoryName(solutionName)} -- {projects[index]}");
                     }
 
                     projects[index] = Path.GetFullPath(projects[index]);
@@ -71,6 +71,7 @@ namespace NuGetPackagesFromTextToMarkdown.Classes
 
 
                     projectList.Add(projects[index]);
+                    
                 }
             }
             catch (Exception ex)
