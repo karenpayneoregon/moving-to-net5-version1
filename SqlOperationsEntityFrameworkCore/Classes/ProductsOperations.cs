@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using SqlOperationsEntityFrameworkCore.Configurations;
+using SqlOperationsEntityFrameworkCore.Data;
 using SqlOperationsEntityFrameworkCore.Models;
 using SqlOperationsEntityFrameworkCore.Repositories;
 

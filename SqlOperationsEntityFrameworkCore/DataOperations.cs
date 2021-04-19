@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using SqlOperationsEntityFrameworkCore.Configurations;
+using SqlOperationsEntityFrameworkCore.Data;
 using SqlOperationsEntityFrameworkCore.Models;
 
 namespace SqlOperationsEntityFrameworkCore

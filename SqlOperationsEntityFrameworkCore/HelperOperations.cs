@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EntityCoreExtensions;
 using EntityCoreExtensions.Classes;
-using SqlOperationsEntityFrameworkCore.Configurations;
+using SqlOperationsEntityFrameworkCore.Data;
 using SqlOperationsEntityFrameworkCore.Data.Configurations;
 
 namespace SqlOperationsEntityFrameworkCore

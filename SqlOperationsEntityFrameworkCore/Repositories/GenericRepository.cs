@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using SqlOperationsEntityFrameworkCore.Configurations;
+using SqlOperationsEntityFrameworkCore.Data;
 using SqlOperationsEntityFrameworkCore.Interfaces;
 
 namespace SqlOperationsEntityFrameworkCore.Repositories
