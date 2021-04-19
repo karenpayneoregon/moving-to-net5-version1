@@ -76,11 +76,10 @@ namespace NuGetPackagesFromTextToMarkdown.Classes
 
             ProjectNuGetPackages pnp = new ProjectNuGetPackages() {ProjectName = Path.GetFileName(fileName) };
             
-            //Console.WriteLine($"Project file {Path.GetFileName(fileName)} contains {packageReferences.Count()} package references:");
             
             foreach (var packageReference in packageReferences)
             {
-                //Console.WriteLine($"{packageReference.Include}, version {packageReference.Version}");
+
                 pnp.PackageReferences.Add(new PackageReference()
                 {
                     Include = packageReference.Include, 
@@ -89,8 +88,6 @@ namespace NuGetPackagesFromTextToMarkdown.Classes
 
                 projectNuGetPackages.Add(pnp);
             }
-
-            
 
             return projectNuGetPackages;
             

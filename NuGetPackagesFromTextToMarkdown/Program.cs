@@ -13,26 +13,24 @@ namespace NuGetPackagesFromTextToMarkdown
     {
         static void Main(string[] args)
         {
-            FileOperations.ProcessFile();
 
-            var names = SolutionHelper.ProjectFileNames(Helpers.SolutionName());
-            foreach (var name in names)
-            {
+            NuGetPackagesContainer.EachProject += OnEachProject;
+            NuGetPackagesContainer.EachPackage += OnEachPackage;
 
-                List<ProjectNuGetPackages> projectNuGetPackages = FileOperations.ProcessProjectFile(name);
-
-                
-                if (!string.IsNullOrWhiteSpace(projectNuGetPackages.FirstOrDefault()?.ProjectName))
-                {
-                    Console.WriteLine(projectNuGetPackages.FirstOrDefault()?.ProjectName);
-                    foreach (var package in projectNuGetPackages)
-                    {
-                        package.ListPackages();
-                    }
-                }
-            }
-
+            var operations = NuGetPackageOperations.Scan();
+            operations.Iterate();
             Console.ReadLine();
+        }
+
+        private static void OnEachProject(string projectName)
+        {
+            Console.WriteLine(projectName);
+        }
+
+        private static void OnEachPackage(PackageReference sender)
+        {
+            Console.WriteLine($"\t{sender.Include}, {sender.Version}");
         }
     }
 }
+

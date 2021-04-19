@@ -34,7 +34,7 @@ namespace NuGetPackagesFromTextToMarkdown.Classes
                     if (!Path.IsPathRooted(projects[index]))
                     {
                         projects[index] = Path.Combine(path1: Path.GetDirectoryName(solutionName), path2: projects[index]);
-                        Console.WriteLine($"{index} : {Path.GetDirectoryName(solutionName)} -- {projects[index]}");
+                        //Console.WriteLine($"{index} : {Path.GetDirectoryName(solutionName)} -- {projects[index]}");
                     }
 
                     projects[index] = Path.GetFullPath(projects[index]);
