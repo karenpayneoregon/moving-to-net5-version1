@@ -46,7 +46,9 @@ namespace WinFormsHelpers
         }
         #endregion
         #region  Property comparer 
+#pragma warning disable 693
         private class PCompare<T> : IComparer<T>
+#pragma warning restore 693
         {
             private PropertyInfo PropInfo { get; set; }
             private ListSortDirection SortDir { get; set; }

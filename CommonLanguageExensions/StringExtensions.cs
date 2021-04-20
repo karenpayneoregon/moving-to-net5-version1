@@ -106,12 +106,12 @@ namespace CommonLanguageExtensions
                 while (match.Success)
                 {
 
-                    var myUri = new Uri(match.Groups[1].Value);
-                    var articleIdValue = HttpUtility.ParseQueryString(myUri.Query).Get(key);
+                    var ui = new Uri(match.Groups[1].Value);
+                    var value = HttpUtility.ParseQueryString(ui.Query).Get(key);
 
-                    if (!string.IsNullOrWhiteSpace(articleIdValue))
+                    if (!string.IsNullOrWhiteSpace(value))
                     {
-                        resultList.Add($"{articleIdValue}");
+                        resultList.Add($"{value}");
                     }
 
                     match = match.NextMatch();
