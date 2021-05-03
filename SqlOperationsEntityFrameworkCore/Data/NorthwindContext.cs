@@ -37,8 +37,6 @@ namespace SqlOperationsEntityFrameworkCore.Data
                  */
                 optionsBuilder.UseSqlServer(Helper.GetConnectionString());
 
-                var tester =Helper.UseLogging();
-                Console.WriteLine();
             }
         }
 

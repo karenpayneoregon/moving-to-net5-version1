@@ -35,6 +35,7 @@ namespace BasicRead
             this.ProductNameTextBox = new System.Windows.Forms.TextBox();
             this.CurrentButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
+            this.GetConnectionStringButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,11 +93,22 @@ namespace BasicRead
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
+            // GetConnectionStringButton
+            // 
+            this.GetConnectionStringButton.Location = new System.Drawing.Point(649, 369);
+            this.GetConnectionStringButton.Name = "GetConnectionStringButton";
+            this.GetConnectionStringButton.Size = new System.Drawing.Size(130, 23);
+            this.GetConnectionStringButton.TabIndex = 7;
+            this.GetConnectionStringButton.Text = "Connection string";
+            this.GetConnectionStringButton.UseVisualStyleBackColor = true;
+            this.GetConnectionStringButton.Click += new System.EventHandler(this.GetConnectionStringButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 404);
+            this.Controls.Add(this.GetConnectionStringButton);
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.CurrentButton);
             this.Controls.Add(this.ProductNameTextBox);
@@ -120,6 +132,7 @@ namespace BasicRead
         private System.Windows.Forms.TextBox ProductNameTextBox;
         private System.Windows.Forms.Button CurrentButton;
         private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.Button GetConnectionStringButton;
     }
 }
 

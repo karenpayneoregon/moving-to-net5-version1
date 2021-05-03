@@ -213,6 +213,7 @@ namespace SqlOperationsEntityFrameworkCore
             File.WriteAllText(fileName, json);
         }
 
+
         public static List<Product> ReadProductsFromJsonFile(string fileName)
         {
             List<Product> products = new();
@@ -224,8 +225,7 @@ namespace SqlOperationsEntityFrameworkCore
             }
             return products;
         }
-
-    /// <summary>
+        /// <summary>
         /// Remove product from database table by id
         /// </summary>
         /// <param name="productIdentifier">Product identifier</param>
@@ -234,5 +234,24 @@ namespace SqlOperationsEntityFrameworkCore
         {
             return false;
         }
+
+        public static List<TModel> ReadFromJson<TModel>(string fileName)
+        {
+            List<TModel> products = new();
+
+            if (File.Exists(fileName))
+            {
+                var json = File.ReadAllText(fileName);
+                products = JsonConvert.DeserializeObject<List<TModel>>(json);
+            }
+            return products;
+        }
+        public static void ModeListToJson<TModel>(List<TModel> list, string fileName)
+        {
+            var json = JsonConvert.SerializeObject(list, Formatting.Indented, new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore});
+            File.WriteAllText(fileName, json);
+        }
+
+
     }
 }

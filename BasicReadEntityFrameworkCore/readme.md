@@ -49,28 +49,6 @@ Note if this was a console app remove the **-window** section from the TargetFra
 </Project>
 ```
 
-# Data container
-
-:green_circle:  **DataTableResults**
-
-| Property | Type | Definition
-| :---- | :---- | :----
-| DataTable | DataTable | Container to return data
-| ConnectionFailed | bool | Set when there is a connection to the server failure
-| ExceptionMessage | string | General exception message
-| GeneralException | Exception | General exception if not connection failure
-| HasException | bool | Indicates if there was an exception thrown
-
-:green_circle:  Contains concrete class for returning data for DataOpertions.ReadProductsTask().
-
-
-
-Note the `ItemGroup` section, this informs .NET that a package for `System.Data.SqlClient` is needed. When building this project Visual Studio should restore the package and if not
- right click on the project name in solution explorer, select `manage NuGet packages`, do a restore by pressing the restore button.
-
-Or simply install via [instructions here](https://www.nuget.org/packages/System.Data.SqlClient/).
-
-Now build the project.
 
 # SQL
 

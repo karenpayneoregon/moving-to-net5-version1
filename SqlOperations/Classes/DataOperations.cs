@@ -22,6 +22,11 @@ namespace SqlOperations.Classes
         public delegate void OnAfterConnect(string message);
         public static event OnAfterConnect AfterConnectMonitor;
 
+        public static void GetConnectionString()
+        {
+            Debug.WriteLine(Helper.GetConnectionString());
+        }
+
         public static async Task<DataTableResults> ReadProductsUsingContainer(CancellationToken ct)
         {
             
@@ -32,6 +37,9 @@ namespace SqlOperations.Classes
             return await Task.Run(async () =>
             {
                 await using var cn = new SqlConnection(ConnectionString);
+                
+                Debug.WriteLine(cn.ConnectionString);
+                
                 await using var cmd = new SqlCommand {Connection = cn, CommandText = SelectStatement()};
                 
                 try

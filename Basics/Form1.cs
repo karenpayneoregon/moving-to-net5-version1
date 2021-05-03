@@ -159,5 +159,10 @@ namespace BasicRead
                     BaseExceptionProperties.LastExceptionMessage);
             }
         }
+
+        private void GetConnectionStringButton_Click(object sender, EventArgs e)
+        {
+            DataOperations.GetConnectionString();
+        }
     }
 }
