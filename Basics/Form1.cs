@@ -103,7 +103,7 @@ namespace BasicRead
                 
                 foreach (DataGridViewColumn dataGridViewColumn in dataGridView1.Columns)
                 {
-                    Debug.WriteLine(dataGridViewColumn.Name);
+                    //Debug.WriteLine(dataGridViewColumn.Name);
                     
                     if (columnDict.ContainsKey(dataGridViewColumn.Name))
                     {
