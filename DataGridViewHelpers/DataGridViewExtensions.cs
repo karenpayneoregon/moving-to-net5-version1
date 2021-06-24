@@ -9,11 +9,11 @@ namespace DataGridViewHelpers
     public static class DataGridViewExtensions
     {
         /// <summary>
-        /// Expand all columns and suitable for working with
-        /// Entity Framework
+        /// Expand all columns and suitable for working with Entity Framework in regards to ICollection`1 column types.
         /// </summary>
         /// <param name="sender"></param>
-        public static void ExpandColumns([NotNull] this DataGridView sender)
+        /// <param name="sizable">Undue DataGridViewAutoSizeColumnMode.AllCells which makes manual resizing possible</param>
+        public static void ExpandColumns([NotNull] this DataGridView sender, bool sizable = false)
         {
             foreach (DataGridViewColumn col in sender.Columns)
             {
@@ -23,6 +23,20 @@ namespace DataGridViewHelpers
                     col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 }
             }
+
+            if (!sizable) return;
+            
+            for (int index = 0; index <= sender.Columns.Count - 1; index++)
+            {
+                int columnWidth = sender.Columns[index].Width;
+
+                sender.Columns[index].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+                // Set Width to calculated AutoSize value:
+                sender.Columns[index].Width = columnWidth;
+            }
+
+
         }
 
         /// <summary>

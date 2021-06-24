@@ -111,7 +111,7 @@ namespace BasicRead
                     }
                 }
 
-                dataGridView1.ExpandColumns();
+                dataGridView1.ExpandColumns(true);
 
 
                 ProductNameTextBox.DataBindings.Add("Text", _bindingSource, "ProductName");

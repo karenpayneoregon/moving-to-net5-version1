@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using SqlOperationsEntityFrameworkCore.Classes;
 using SqlOperationsEntityFrameworkCore.Data;
 using SqlOperationsEntityFrameworkCore.Models;
 
@@ -177,7 +178,7 @@ namespace SqlOperationsEntityFrameworkCore
         /// <summary>
         /// Get all categories suitable for displaying in a ComboBox or
         /// ListBox for reference only but unlike above will have all properties
-        /// of Categories table.
+        /// of <see cref="Cat"/> table.
         /// </summary>
         /// <returns></returns>
         public static async Task<List<Categories>> GetCategoriesAllNoProjectionsAsync()
@@ -199,7 +200,7 @@ namespace SqlOperationsEntityFrameworkCore
         }
 
         /// <summary>
-        /// Simple example for converting Product list to json
+        /// Simple example for converting <see cref="Product"/> list to json
         /// </summary>
         /// <param name="productsList"></param>
         /// <param name="fileName"></param>
@@ -213,7 +214,12 @@ namespace SqlOperationsEntityFrameworkCore
             File.WriteAllText(fileName, json);
         }
 
-
+        /// <summary>
+        /// Read products from a physical file and deserialize to a
+        /// list of <see cref="Product"/>
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
         public static List<Product> ReadProductsFromJsonFile(string fileName)
         {
             List<Product> products = new();
@@ -248,7 +254,7 @@ namespace SqlOperationsEntityFrameworkCore
         }
         public static void ModeListToJson<TModel>(List<TModel> list, string fileName)
         {
-            var json = JsonConvert.SerializeObject(list, Formatting.Indented, new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore});
+            var json = JsonConvert.SerializeObject(list, NewtonSettings.SettingsDefault());
             File.WriteAllText(fileName, json);
         }
 

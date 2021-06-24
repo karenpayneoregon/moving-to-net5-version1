@@ -11,11 +11,27 @@ using SqlOperationsEntityFrameworkCore.Interfaces;
 namespace SqlOperationsEntityFrameworkCore.Repositories
 {
     /// <summary>
-    /// Popular generic method to include navigation properties
+    /// * Popular generic method to include navigation properties
+    /// * Works well with a controller in ASP.NET Core
     /// </summary>
     /// <typeparam name="TEntity">Model</typeparam>
+    /// <remarks>
+    /// Code below is a basic framework for setting up dependency injection in ASP.NET Core
+    /// </remarks>
+    /// <code>
+    /// public void ConfigureServices(IServiceCollection services) {  
+    ///     services.AddApplicationInsightsTelemetry(Configuration);
+    ///     services.AddMvc();
+    ///     services.AddDbContext &lt;ApplicationContext&gt; (options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));  
+    ///    services.AddScoped(typeof(IRepository < > ), typeof(Repository < > ));
+    /// }
+    /// </code>
     public class GenericRepository<TEntity> : IGenericOperations<TEntity> where TEntity : class
     {
+        /*
+         * This is the only thing which is not generic which with little effort
+         * can also be generic as in the basic code sample in the class documentation section
+         */
         private readonly NorthwindContext _context;
         private readonly DbSet<TEntity> _dbSet;
 
