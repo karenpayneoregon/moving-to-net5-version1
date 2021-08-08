@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SqlOperationsEntityFrameworkCore.Models;
 
+// ReSharper disable once CheckNamespace
 namespace SqlOperationsEntityFrameworkCore.Models
 {
     /// <summary>

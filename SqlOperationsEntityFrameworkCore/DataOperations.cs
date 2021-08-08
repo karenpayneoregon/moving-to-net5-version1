@@ -156,10 +156,13 @@ namespace SqlOperationsEntityFrameworkCore
             await Task.Run(async () =>
             {
 
-                var products = await GetProductsWithProjection();
+                List<Product> products = await GetProductsWithProjection();
 
-                productList = products
-                    .GroupBy(product => new CategoryProduct {CategoryName = product.CategoryName, ProductName = product.ProductName})
+                productList = products.GroupBy(product => new CategoryProduct
+                    {
+                        CategoryName = product.CategoryName, 
+                        ProductName = product.ProductName
+                    })
                     .Select(product => new Product()
                     {
                         ProductId = products.FirstOrDefault().ProductId,
