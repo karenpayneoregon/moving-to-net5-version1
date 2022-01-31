@@ -13,7 +13,7 @@
 
 |Project| :white_medium_square: | Purpose   |
 | :--- | :---         |  :---  |
-|ConfigurationHelper| | tes |Provides code to read `appsettings.json` for connection strings   |
+|ConfigurationHelper| | test |Provides code to read `appsettings.json` for connection strings   |
 |BasicRead |:yellow_circle:| Utilizes <kbd>SqlOperations</kbd> to read data into a DataGridView |
 |BasicReadEntityFrameworkCore | :purple_circle:| Utilizes <kbd>SqlOperationsEntityFrameworkCore</kbd> to read data into a DataGridView |
 |SqlOperations |:yellow_circle: |Provides code to interact with SQL-Server using SqlClient data provider   |
