@@ -164,5 +164,26 @@ namespace BasicRead
         {
             DataOperations.GetConnectionString();
         }
+
+        private async void GetOneRecordButton_Click(object sender, EventArgs e)
+        {
+            Customers customer = await DataOperations.SingleCustomer(2);
+        }
+
+        //protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        //{
+        //    if (keyData == (Keys.Alt | Keys.Enter))
+        //    {
+        //        if (ActiveControl == dataGridView1)
+        //        {
+        //            Debug.WriteLine("Do something");
+        //        }
+
+        //        return true;
+        //    }
+
+        //    return base.ProcessCmdKey(ref msg, keyData);
+        //}
+
     }
 }

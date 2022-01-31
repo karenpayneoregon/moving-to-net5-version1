@@ -153,6 +153,7 @@ namespace SqlOperationsEntityFrameworkCore
         {
             List<Product> productList = new();
 
+            
             await Task.Run(async () =>
             {
 

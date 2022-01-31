@@ -255,6 +255,38 @@ namespace SqlOperations.Classes
 
         }
 
+        public static async Task<Customers> SingleCustomer(int identifier)
+        {
+            Customers customer = new ();
+
+            await using var cn = new SqlConnection(ConnectionString);
+            await using var cmd = new SqlCommand { Connection = cn, CommandText = SelectStatement() };
+
+            cmd.CommandText =
+                "SELECT TOP (1) CustomerIdentifier, CompanyName, ContactId, Street, City, PostalCode, CountryIdentifier " +
+                "FROM dbo.Customers " + 
+                "WHERE CustomerIdentifier = @CustomerIdentifier";
+
+            cmd.Parameters.Add("@CustomerIdentifier", SqlDbType.Int).Value = identifier;
+
+            await cn.OpenAsync();
+            var reader = await cmd.ExecuteReaderAsync();
+
+            if (!reader.HasRows) return customer;
+
+            reader.Read();
+
+            customer.CustomerIdentifier = reader.GetInt32(0);
+            customer.CompanyName = reader.GetString(1);
+            customer.ContactId = reader.GetInt32(2);
+            customer.Street = reader.GetString(3);
+            customer.City = reader.GetString(4);
+            customer.PostalCode = reader.GetString(5);
+            customer.CountryIdentifier = reader.GetInt32(6);
+
+            return customer;
+        }
+
         /// <summary>
         /// This SQL was generated in Microsoft SQL-Server Management Studio (it's free)
         /// </summary>
