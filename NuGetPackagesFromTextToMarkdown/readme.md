@@ -2,7 +2,7 @@
 
 Something more or less to figure out some points to teach in a class, nothing to do with the result of the repository.
 
-Ye or enters here abandon all hope.
+`Ye` who enters here abandon all hope.
 
 ## Version 1
 
