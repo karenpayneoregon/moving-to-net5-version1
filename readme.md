@@ -1,4 +1,6 @@
-﻿# About
+﻿# Moving from .NET Framework to .NET Core with SQL-Server
+
+# About
 
 [Microsoft Visual Studio 2019](https://visualstudio.microsoft.com/vs/) solution for teaching working with SQL-Server databases. Rather than place all code in the front-end project or split code between front-end/back-end, code has been broken out to smaller class projects which allows code to be used in other projects.
 
