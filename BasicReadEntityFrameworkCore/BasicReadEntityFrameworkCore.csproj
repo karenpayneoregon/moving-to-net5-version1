@@ -7,7 +7,9 @@
 		<UseWindowsForms>true</UseWindowsForms>
 	</PropertyGroup>
 
+
 	<ItemGroup>
+	  <ProjectReference Include="..\ConfigurationHelper\ConfigurationHelper.csproj" />
 	  <ProjectReference Include="..\DataGridViewHelpers\DataGridViewHelpers.csproj" />
 	  <ProjectReference Include="..\SqlOperationsEntityFrameworkCore\SqlOperationsEntityFrameworkCore.csproj" />
 	  <ProjectReference Include="..\WinFormDialogs\WinFormDialogs.csproj" />
